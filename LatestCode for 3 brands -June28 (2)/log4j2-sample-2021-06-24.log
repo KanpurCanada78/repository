@@ -1,0 +1,66 @@
+[INFO ] 2021-06-24 10:00:16.684 [main] Log - I am in onStart method Email Chat
+[INFO ] 2021-06-24 10:00:21.395 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 10:07:45.146 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2021-06-24 10:07:45.578 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2021-06-24 10:07:45.583 [main] Log - Inbound_BG_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 10:08:58.433 [main] Log - Inbound_BG_CustomerEmailToTwilio test is failed.
+[INFO ] 2021-06-24 10:08:58.441 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2021-06-24 10:08:58.482 [main] Log - Inbound_HC_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 10:10:11.587 [main] Log - Inbound_HC_CustomerEmailToTwilio test is failed.
+[INFO ] 2021-06-24 10:10:11.597 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2021-06-24 10:10:11.607 [main] Log - I am in onFinish method Email Chat
+[INFO ] 2021-06-24 15:43:03.758 [main] Log - I am in onStart method Email Chat
+[INFO ] 2021-06-24 15:43:07.204 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 15:50:14.004 [main] Log - Inbound_NM_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 15:50:14.043 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 15:50:59.280 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 15:50:59.297 [main] Log - Inbound_BG_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 15:51:54.344 [main] Log - Inbound_BG_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 15:51:54.348 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 15:52:39.219 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 15:52:39.223 [main] Log - Inbound_HC_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 15:53:35.512 [main] Log - Inbound_HC_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 15:53:35.516 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 15:54:21.803 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 15:54:22.617 [main] Log - I am in onFinish method Email Chat
+[INFO ] 2021-06-24 17:13:40.425 [main] Log - I am in onStart method Email Chat
+[INFO ] 2021-06-24 17:13:43.810 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 17:20:49.721 [main] Log - Inbound_NM_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 17:20:49.756 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 17:21:34.788 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 17:21:34.793 [main] Log - Inbound_BG_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 17:22:30.504 [main] Log - Inbound_BG_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 17:22:30.507 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 17:23:15.764 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 17:23:15.771 [main] Log - Inbound_HC_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 17:24:13.130 [main] Log - Inbound_HC_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 17:24:13.133 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 17:24:59.322 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 17:25:00.130 [main] Log - I am in onFinish method Email Chat
+[INFO ] 2021-06-24 18:09:38.374 [main] Log - I am in onStart method Email Chat
+[INFO ] 2021-06-24 18:09:43.700 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 18:16:51.524 [main] Log - Inbound_NM_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 18:16:51.563 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 18:17:37.213 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 18:17:37.218 [main] Log - Inbound_BG_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 18:18:32.635 [main] Log - Inbound_BG_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 18:18:32.636 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 18:19:17.665 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 18:19:17.672 [main] Log - Inbound_HC_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 18:20:13.937 [main] Log - Inbound_HC_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 18:20:13.940 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 18:20:59.709 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 18:21:00.537 [main] Log - I am in onFinish method Email Chat
+[INFO ] 2021-06-24 18:23:26.649 [main] Log - I am in onStart method Email Chat
+[INFO ] 2021-06-24 18:23:33.605 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 18:30:40.317 [main] Log - Inbound_NM_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 18:30:40.353 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 18:31:25.677 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 18:31:25.682 [main] Log - Inbound_BG_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 18:32:22.686 [main] Log - Inbound_BG_CustomerEmailToTwilio test is succeed.
+[INFO ] 2021-06-24 18:32:22.689 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is starting.
+[INFO ] 2021-06-24 18:33:08.167 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is succeed.
+[INFO ] 2021-06-24 18:33:08.173 [main] Log - Inbound_HC_CustomerEmailToTwilio test is starting.
+[INFO ] 2021-06-24 18:34:04.522 [main] Log - Inbound_HC_CustomerEmailToTwilio test is failed.
+[INFO ] 2021-06-24 18:34:04.610 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2021-06-24 18:34:05.382 [main] Log - I am in onFinish method Email Chat

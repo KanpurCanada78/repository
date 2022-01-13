@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Twilio UI Automation]">
+  <test thread-count="5" name="Email Chat(failed)">
+    <classes>
+      <class name="com.twilioTests.TwilioGmailTest">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterTest"/>
+          <include name="Outbound_BG_twilioReplyToCustomerEmail"/>
+          <include name="beforeTest"/>
+          <include name="Inbound_HC_CustomerEmailToTwilio"/>
+          <include name="Outbound_NM_twilioReplyToCustomerEmail"/>
+          <include name="Outbound_HC_twilioReplyToCustomerEmail"/>
+          <include name="Inbound_NM_CustomerEmailToTwilio"/>
+          <include name="Inbound_BG_CustomerEmailToTwilio"/>
+        </methods>
+      </class> <!-- com.twilioTests.TwilioGmailTest -->
+    </classes>
+  </test> <!-- Email Chat(failed) -->
+</suite> <!-- Failed suite [Twilio UI Automation] -->
