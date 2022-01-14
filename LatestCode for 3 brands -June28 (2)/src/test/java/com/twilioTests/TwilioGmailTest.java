@@ -43,7 +43,7 @@ public class TwilioGmailTest extends BaseTest{
 
 
 	@Test(priority = 1)
-	@Description("Verify whether customer is able to send an email to twilio flex account")
+	@Description("Verify whether   customer is able to send an email to twilio flex account")
 	public void Inbound_NM_CustomerEmailToTwilio() throws Exception
 	{
 		emailAddress = properties.getProperty("NMEmailUser");
