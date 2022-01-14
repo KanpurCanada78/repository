@@ -20,7 +20,7 @@ public class WaitUtility2 extends BaseTest{
 	public static void WaitTillElementVisible(WebElement element) throws IOException {
 		WebDriverWait wait = new WebDriverWait(dri, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(element)) ;
-		//bhbg
+		
     }
 
 }
