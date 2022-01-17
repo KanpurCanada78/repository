@@ -40,7 +40,7 @@ public class SendEmailToCustomer extends BaseTest{
 	List<WebElement> dropDownAgentStatusList;
 
 	private void selectBrand() throws Exception {
-		SharedMethods.clickElement(dropDownBrandParentElement);
+		//SharedMethods.clickElement(dropDownBrandParentElement);
 		SharedMethods.selectElementFromDropdown(dropDownBrandParentList, dropDownBrandParentElement, "Bergdorf Goodman");
 	}
 	
