@@ -5,7 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import com.helper.SharedMethods;
-import com.helper.WaitUtility;
+//import com.helper.WaitUtility;
 
 public class CustomerHistory {
 	
