@@ -19,7 +19,7 @@ public class SharedMethods {
 		selectElementFromList(options, value);
     }
 
-	private static void selectElementFromList(List<WebElement> options, String value) throws Exception {
+	public static void selectElementFromList(List<WebElement> options, String value) throws Exception {
 		for(WebElement val : options) {
 			if(val.getText().contains(value)) {
 				clickElement(val);
@@ -36,6 +36,27 @@ public class SharedMethods {
 		element.sendKeys(value);	
     }
 	
+	public static WebElement getElementfromListUsingInnerText(List<WebElement> list, String innerText)
+	{
+		for(WebElement element :list) {
+			if(element.getText().contains(innerText)) {
+				return element;
+			}
+		}
+		return null;		
+	}
+	
+	public static WebElement GetElementFromList(List<WebElement> options, String value) throws Exception {
+		for(WebElement val : options) {
+			if(val.getText().contains(value)) {
+				return val;
+			}
+			else{
+				Assert.fail("None of the element was found");
+			}
+		}
+		return null;		
+	}
 	
 	
 	

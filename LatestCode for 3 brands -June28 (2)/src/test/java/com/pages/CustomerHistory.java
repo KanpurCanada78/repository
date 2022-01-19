@@ -33,22 +33,22 @@ public class CustomerHistory {
 	@FindBy(xpath="(//div[@class='Twilio-Icon Twilio-Icon-Custom  css-y8bnhq'])[4]")
 	WebElement eyeDetailedView;
 	
-	private void selectChannel() throws Exception
+	private void SelectChannel() throws Exception
 	{
 		//SharedMethods.clickElement(dropDownChannelElement);
 		SharedMethods.selectElementFromDropdown(dropDownChannelList,dropDownChannelElement,"Email");
 	}
 	
-	private void selectRange() throws Exception 
+	private void SelectRange() throws Exception 
 	{
 		SharedMethods.selectElementFromDropdown(dropDownRangeList,dropDownRangeElement,"");
 	}
-	private void clickFilter() throws Exception
+	private void ClickFilter() throws Exception
 	{
 		SharedMethods.clickElement(filterBtn);
 	}
 	
-	private void clickReset() throws Exception
+	private void ClickReset() throws Exception
 	{
 		SharedMethods.clickElement(resetBtn);
 	}
