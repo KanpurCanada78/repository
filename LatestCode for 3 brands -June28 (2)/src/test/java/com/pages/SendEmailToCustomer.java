@@ -3,15 +3,22 @@ package com.pages;
 import java.io.IOException;
 import java.util.List;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.helper.SharedMethods;
 import com.helper.WaitUtility;
 import com.twilioTests.BaseTest;
+import com.ui.pages.BasePage;
 
-public class SendEmailToCustomer extends BaseTest{
+public class SendEmailToCustomer extends BasePage{
 	
+	protected SendEmailToCustomer(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
 	@FindBy(xpath = "//h5[text()='Send Email To Customer']")
 	WebElement sendEmailTitle;
 	
@@ -41,30 +48,30 @@ public class SendEmailToCustomer extends BaseTest{
 
 	private void selectBrand() throws Exception {
 		//SharedMethods.clickElement(dropDownBrandParentElement);
-		SharedMethods.selectElementFromDropdown(dropDownBrandParentList, dropDownBrandParentElement, "Bergdorf Goodman");
+		SharedMethods.selectElementFromDropdown(driver, dropDownBrandParentList, dropDownBrandParentElement, "Bergdorf Goodman");
 	}
 	
 	private void enterSubject() throws Exception {
-		SharedMethods.clearAndEnterText(subjectTextBox, "Test Subject Automation");
+		SharedMethods.clearAndEnterText(driver, subjectTextBox, "Test Subject Automation");
 	}
 	
 	private void enterEmail() throws Exception {
-		SharedMethods.clearAndEnterText(customerEmailTextBox, "Shailendra_Singh@neimanmarcus.com");
+		SharedMethods.clearAndEnterText(driver, customerEmailTextBox, "Shailendra_Singh@neimanmarcus.com");
 	}
 	
 	private void sendEmail() throws Exception {
-		SharedMethods.clickElement(composeEmailButton);
+		SharedMethods.clickElement(driver, composeEmailButton);
 	}
 	
 	private boolean checkAgentAvailable() throws Exception {
-		WaitUtility.WaitTillElementVisible(agentCurrentStatus);
+		WaitUtility.WaitTillElementVisible(driver, agentCurrentStatus);
 		return agentCurrentStatus.getText().contains("Available");
 	}
 	
 	private void makeAgentAvailable() throws Exception {
 		if(!checkAgentAvailable()) {
 			agentCurrentStatus.click();
-			SharedMethods.selectElementFromDropdown(dropDownAgentStatusList, dropDownBrandParentElement, "Available");
+			SharedMethods.selectElementFromDropdown(driver, dropDownAgentStatusList, dropDownBrandParentElement, "Available");
 		}	
 	}
 	

@@ -24,8 +24,8 @@ import com.helper.EmailClientType;
 import com.helper.EmailCommonSteps;
 import com.helper.EmailUtils;
 import com.listen.CustomListen;
+import com.pages.LoginTwilloPage;
 import com.ui.pages.HomeTwilloPage;
-import com.ui.pages.LoginTwilloPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
@@ -48,7 +48,6 @@ public class TwilioGmailTest extends BaseTest{
 	public void Inbound_NM_CustomerEmailToTwilio() throws Exception
 	{
 		
-		
 		/*
 		 * emailAddress = properties.getProperty("NMEmailUser"); emailPassword =
 		 * properties.getProperty("NMEmailPassword");
@@ -58,11 +57,8 @@ public class TwilioGmailTest extends BaseTest{
 		 * properties.getProperty("TwilioNMemail"), "Automation Test NM "+currentTime,
 		 * "Hello, What is the status on my automation test order WN"+currentTime);
 		 */
-		 
-		  driver.get(properties.getProperty("TwilioFlexUrl"));
-		  driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);
-		 
-		lp=new LoginTwilloPage(driver);
+		//driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);		 
+		lp=new com.pages.LoginTwilloPage(driver);
 		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
 		hp=new HomeTwilloPage(driver);
 		driver=hp.taskchekwithoutbound(driver, properties,properties.getProperty("NMEmailUser"), properties.getProperty("NMEmailUserFirstNameLastName"), true);
@@ -140,10 +136,9 @@ public class TwilioGmailTest extends BaseTest{
 
 	}
 
-	@AfterTest
-	public void afterTest() {
-		driver.quit();
-	}
+	/*
+	 * @AfterTest public void afterTest() { driver.quit(); }
+	 */
 	
 	//@Step("Verify Email from twilio agent")
 	private void verifyEmailDetails(String EmailAddress, String EmailBody) throws MessagingException, IOException {

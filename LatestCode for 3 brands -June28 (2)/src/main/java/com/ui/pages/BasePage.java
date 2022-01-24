@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 	
-	WebDriver driver;
+	protected WebDriver driver;
 	WebDriverWait wait;
-    BasePage (WebDriver driver)
+    protected BasePage (WebDriver driver)
     {
         this.driver=driver;
         PageFactory.initElements(driver,this);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        //wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
 }

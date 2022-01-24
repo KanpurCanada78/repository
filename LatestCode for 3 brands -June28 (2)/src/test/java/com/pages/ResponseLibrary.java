@@ -3,13 +3,20 @@ package com.pages;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.constant.Constants;
 import com.helper.SharedMethods;
+import com.ui.pages.BasePage;
 
-public class ResponseLibrary {
+public class ResponseLibrary extends BasePage {
+	protected ResponseLibrary(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
 	WebElement responseSubTypeElement;
 
 	@FindBy(xpath = "//div[contains(@class,'Twilio-CRMContainer')]/descendant::ul/li")
@@ -29,13 +36,13 @@ public class ResponseLibrary {
 
 	private void clickBrowse() throws Exception {
 
-		SharedMethods.clickElement(browseLabel);
+		SharedMethods.clickElement(driver, browseLabel);
 	}
 
 	private void SelectResponseType(String responseType) throws Exception {
 
 		clickBrowse();
-		SharedMethods.selectElementFromList(responseTypeList, responseType);
+		SharedMethods.selectElementFromList(driver, responseTypeList, responseType);
 	}
 
 	private WebElement GetResponseSubType(String responseSubType) throws Exception {

@@ -2,12 +2,19 @@ package com.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import com.helper.SharedMethods;
+import com.ui.pages.BasePage;
 //import com.helper.WaitUtility;
 
-public class CustomerHistory {
+public class CustomerHistory extends BasePage {
+
+	protected CustomerHistory(WebDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
 
 	@FindBy(xpath = "//button[text()='Reset']")
 	WebElement resetBtn;
@@ -35,23 +42,23 @@ public class CustomerHistory {
 
 	private void SelectChannel() throws Exception {
 		// SharedMethods.clickElement(dropDownChannelElement);
-		SharedMethods.selectElementFromDropdown(dropDownChannelList, dropDownChannelElement, "Email");
+		SharedMethods.selectElementFromDropdown(driver, dropDownChannelList, dropDownChannelElement, "Email");
 	}
 
 	private void SelectRange() throws Exception {
-		SharedMethods.selectElementFromDropdown(dropDownRangeList, dropDownRangeElement, "");
+		SharedMethods.selectElementFromDropdown(driver, dropDownRangeList, dropDownRangeElement, "");
 	}
 
 	private void ClickFilter() throws Exception {
-		SharedMethods.clickElement(filterBtn);
+		SharedMethods.clickElement(driver, filterBtn);
 	}
 
 	private void ClickReset() throws Exception {
-		SharedMethods.clickElement(resetBtn);
+		SharedMethods.clickElement(driver, resetBtn);
 	}
 
 	private void viewDetailed() throws Exception {
-		SharedMethods.clickElement(eyeDetailedView);
+		SharedMethods.clickElement(driver, eyeDetailedView);
 	}
 
 }
