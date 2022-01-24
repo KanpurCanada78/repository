@@ -1,8 +1,30 @@
-[INFO ] 2022-01-13 13:09:22.441 [main] Log - I am in onStart method Email Chat
-[INFO ] 2022-01-13 13:09:27.855 [main] Log - Inbound_NM_CustomerEmailToTwilio test is skipped.
-[INFO ] 2022-01-13 13:09:27.866 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is skipped.
-[INFO ] 2022-01-13 13:09:27.871 [main] Log - Inbound_BG_CustomerEmailToTwilio test is skipped.
-[INFO ] 2022-01-13 13:09:27.902 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is skipped.
-[INFO ] 2022-01-13 13:09:27.961 [main] Log - Inbound_HC_CustomerEmailToTwilio test is skipped.
-[INFO ] 2022-01-13 13:09:27.969 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is skipped.
-[INFO ] 2022-01-13 13:09:27.977 [main] Log - I am in onFinish method Email Chat
+[INFO ] 2022-01-24 21:33:47.305 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-24 21:33:50.299 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2022-01-24 21:33:55.515 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2022-01-24 21:33:56.039 [main] Log - I am in onFinish method Default test
+[INFO ] 2022-01-24 21:38:50.769 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-24 21:38:52.660 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2022-01-24 21:42:12.650 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2022-01-24 21:42:13.313 [main] Log - I am in onFinish method Default test
+[INFO ] 2022-01-24 21:44:56.909 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-24 21:44:59.290 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2022-01-24 21:45:02.299 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2022-01-24 21:45:02.682 [main] Log - I am in onFinish method Default test
+[INFO ] 2022-01-24 21:46:28.632 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-24 21:46:30.182 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2022-01-24 21:50:38.508 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2022-01-24 21:50:39.171 [main] Log - I am in onFinish method Default test
+[INFO ] 2022-01-24 22:00:51.760 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-24 22:00:54.227 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2022-01-24 22:04:53.415 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2022-01-24 22:04:54.068 [main] Log - I am in onFinish method Default test
+[INFO ] 2022-01-24 23:19:12.117 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-24 23:19:17.861 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2022-01-24 23:22:40.853 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2022-01-24 23:22:41.525 [main] Log - I am in onFinish method Default test
+[INFO ] 2022-01-24 23:47:32.806 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-24 23:47:37.350 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2022-01-24 23:52:54.318 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2022-01-24 23:52:55.182 [main] Log - I am in onFinish method Default test
+[INFO ] 2022-01-24 23:54:10.173 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-24 23:54:12.703 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.

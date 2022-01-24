@@ -44,6 +44,7 @@ public class LoginTwilloPage extends BasePage {
 	public  void login(String loginname,String pwd, Properties properties ) throws InterruptedException {
 		//Wait until twilio page is ready for login
 		Thread.sleep(5000);
+	
 		username.sendKeys(loginname);
 		button.click();
 		//Wait for password enter
@@ -55,11 +56,12 @@ public class LoginTwilloPage extends BasePage {
 
 		// get the OTP using Twilio APIs:
 		Twilio.init(properties.getProperty("TwilioAuthACCOUNT_SID"), properties.getProperty("TwilioAuthAUTH_TOKEN"));
-		String smsBody = getMessage(properties);
-		System.out.println(smsBody);
-		String OTPNumber = smsBody.replaceAll("[^-?0-9]+", " ");
-		System.out.println(OTPNumber);
-		opt.sendKeys(OTPNumber.trim());
+		/*
+		 * String smsBody = getMessage(properties); System.out.println(smsBody); String
+		 * OTPNumber = smsBody.replaceAll("[^-?0-9]+", " ");
+		 * System.out.println(OTPNumber); opt.sendKeys(OTPNumber.trim());
+		 */
+		Thread.sleep(30000);
 		verify.click();
 
 	}

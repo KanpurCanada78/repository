@@ -1,0 +1,8 @@
+[INFO ] 2022-01-21 23:09:27.884 [main] Log - I am in onStart method Email Chat
+[INFO ] 2022-01-21 23:09:34.632 [main] Log - Inbound_NM_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-21 23:09:34.654 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2022-01-21 23:09:34.664 [main] Log - Inbound_BG_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-21 23:09:34.677 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2022-01-21 23:09:34.686 [main] Log - Inbound_HC_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-21 23:09:34.694 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2022-01-21 23:09:34.704 [main] Log - I am in onFinish method Email Chat

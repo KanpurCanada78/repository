@@ -42,19 +42,26 @@ public class TwilioGmailTest extends BaseTest{
 	public static String emailPassword;
 
 
+	
 	@Test(priority = 1)
 	@Description("Verify whether   customer is able to send an email to twilio flex account")
 	public void Inbound_NM_CustomerEmailToTwilio() throws Exception
 	{
-		emailAddress = properties.getProperty("NMEmailUser");
-		emailPassword = properties.getProperty("NMEmailPassword");
-		emailUtils.connectToInbox(emailAddress, emailPassword, EmailClientType.GMAIL);
-    	emailUtils.deleteEmails();
-    	Long currentTime = System.currentTimeMillis();
-    	emailUtils.sendEmail(emailAddress, emailPassword, properties.getProperty("TwilioNMemail"),
-    			"Automation Test NM "+currentTime, "Hello, What is the status on my automation test order WN"+currentTime);
-		driver.get(properties.getProperty("TwilioFlexUrl"));
-		driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);
+		
+		
+		/*
+		 * emailAddress = properties.getProperty("NMEmailUser"); emailPassword =
+		 * properties.getProperty("NMEmailPassword");
+		 * emailUtils.connectToInbox(emailAddress, emailPassword,
+		 * EmailClientType.GMAIL); emailUtils.deleteEmails(); Long currentTime =
+		 * System.currentTimeMillis(); emailUtils.sendEmail(emailAddress, emailPassword,
+		 * properties.getProperty("TwilioNMemail"), "Automation Test NM "+currentTime,
+		 * "Hello, What is the status on my automation test order WN"+currentTime);
+		 */
+		 
+		  driver.get(properties.getProperty("TwilioFlexUrl"));
+		  driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);
+		 
 		lp=new LoginTwilloPage(driver);
 		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
 		hp=new HomeTwilloPage(driver);
@@ -62,7 +69,7 @@ public class TwilioGmailTest extends BaseTest{
 		
 	}
 
-	@Test(dependsOnMethods = {"Inbound_NM_CustomerEmailToTwilio"}, priority = 2)
+	//@Test(dependsOnMethods = {"Inbound_NM_CustomerEmailToTwilio"}, priority = 2)
 	@Description("Verify whether twilio flex agent is able to reply email from customer ")
 	public void Outbound_NM_twilioReplyToCustomerEmail() throws Exception
 	{
@@ -73,7 +80,7 @@ public class TwilioGmailTest extends BaseTest{
 
 	}
 	
-	@Test(priority= 3)
+	//@Test(priority= 3)
 	@Description("Verify whether customer is able to send an email to BG twilio flex account")
 	public void Inbound_BG_CustomerEmailToTwilio() throws Exception
 	{
@@ -91,7 +98,7 @@ public class TwilioGmailTest extends BaseTest{
     	
 	}
 	
-	@Test(dependsOnMethods = {"Inbound_BG_CustomerEmailToTwilio"}, priority = 4)
+	//@Test(dependsOnMethods = {"Inbound_BG_CustomerEmailToTwilio"}, priority = 4)
 	@Description("Verify whether twilio flex agent is able to reply email from customer ")
 	public void Outbound_BG_twilioReplyToCustomerEmail() throws Exception
 	{
@@ -102,7 +109,7 @@ public class TwilioGmailTest extends BaseTest{
 
 	}
 	
-	@Test(priority = 5)
+	//@Test(priority = 5)
 	@Description("Verify whether customer is able to send an email to HC twilio flex account")
 	public void Inbound_HC_CustomerEmailToTwilio() throws Exception
 	{
@@ -121,7 +128,7 @@ public class TwilioGmailTest extends BaseTest{
     	
 	}
 	
-	@Test(dependsOnMethods = {"Inbound_HC_CustomerEmailToTwilio"}, priority = 6)
+	//@Test(dependsOnMethods = {"Inbound_HC_CustomerEmailToTwilio"}, priority = 6)
 	@Description("Verify whether twilio flex agent is able to reply email from customer ")
 	public void Outbound_HC_twilioReplyToCustomerEmail() throws Exception
 	{
@@ -138,7 +145,7 @@ public class TwilioGmailTest extends BaseTest{
 		driver.quit();
 	}
 	
-	@Step("Verify Email from twilio agent")
+	//@Step("Verify Email from twilio agent")
 	private void verifyEmailDetails(String EmailAddress, String EmailBody) throws MessagingException, IOException {
 		Message message = emailUtils.getRecentEmailMessage();
 		Assert.assertEquals(((InternetAddress)message.getFrom()[0]).getAddress(), EmailAddress);

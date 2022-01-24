@@ -1,0 +1,23 @@
+[INFO ] 2022-01-22 00:47:48.698 [main] Log - I am in onStart method Email Chat
+[INFO ] 2022-01-22 00:47:51.458 [main] Log - Inbound_NM_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-22 00:47:51.474 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2022-01-22 00:47:51.487 [main] Log - Inbound_BG_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-22 00:47:51.498 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2022-01-22 00:47:51.539 [main] Log - Inbound_HC_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-22 00:47:51.552 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2022-01-22 00:47:51.581 [main] Log - I am in onFinish method Email Chat
+[INFO ] 2022-01-22 01:00:40.753 [main] Log - I am in onStart method Email Chat
+[INFO ] 2022-01-22 01:00:43.274 [main] Log - Inbound_NM_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-22 01:00:43.297 [main] Log - Outbound_NM_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2022-01-22 01:00:43.305 [main] Log - Inbound_BG_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-22 01:00:43.330 [main] Log - Outbound_BG_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2022-01-22 01:00:43.341 [main] Log - Inbound_HC_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-22 01:00:43.373 [main] Log - Outbound_HC_twilioReplyToCustomerEmail test is skipped.
+[INFO ] 2022-01-22 01:00:43.395 [main] Log - I am in onFinish method Email Chat
+[INFO ] 2022-01-22 01:06:15.465 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-22 01:06:17.763 [main] Log - Inbound_NM_CustomerEmailToTwilio test is skipped.
+[INFO ] 2022-01-22 01:06:17.780 [main] Log - I am in onFinish method Default test
+[INFO ] 2022-01-22 01:09:12.155 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-22 01:09:37.054 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2022-01-22 01:09:42.229 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2022-01-22 01:09:43.150 [main] Log - I am in onFinish method Default test
