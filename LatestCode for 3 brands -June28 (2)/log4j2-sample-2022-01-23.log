@@ -1,0 +1,4 @@
+[INFO ] 2022-01-23 20:36:08.224 [main] Log - I am in onStart method Default test
+[INFO ] 2022-01-23 20:36:11.748 [main] Log - Inbound_NM_CustomerEmailToTwilio test is starting.
+[INFO ] 2022-01-23 20:36:16.900 [main] Log - Inbound_NM_CustomerEmailToTwilio test is failed.
+[INFO ] 2022-01-23 20:36:17.287 [main] Log - I am in onFinish method Default test
