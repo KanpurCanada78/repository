@@ -14,19 +14,20 @@ public class SharedMethods {
 		element.click();
     }
 	
-	public static void selectElementFromDropdown(WebDriver driver, List<WebElement> options, WebElement parentElement, String value) throws Exception {
-		WaitUtility.WaitTillElementVisible(driver, parentElement);
-		parentElement.click();
+	public static void selectElementFromDropdown(WebDriver driver, List<WebElement> options, String value) throws Exception {
+		WaitUtility.WaitTillElementListVisible(driver, options);
+		//parentElement.click();
 		selectElementFromList(driver, options, value);
     }
 
 	public static void selectElementFromList(WebDriver driver, List<WebElement> options, String value) throws Exception {
 		for(WebElement val : options) {
+			String str = val.getText();
 			if(val.getText().contains(value)) {
 				clickElement(driver, val);
 			}
 			else{
-				Assert.fail("None of the element was found");
+				//Assert.fail("None of the element was found");
 			}
 		}		
 	}

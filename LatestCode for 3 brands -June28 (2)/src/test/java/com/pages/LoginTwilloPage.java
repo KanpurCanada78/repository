@@ -16,11 +16,8 @@ import io.qameta.allure.Step;
 
 public class LoginTwilloPage extends BasePage {
 
-	WebDriver driver ;
-
 	public LoginTwilloPage(WebDriver driver) {
-
-		super(driver);
+		super(driver);		
 	}
 
 
@@ -38,7 +35,7 @@ public class LoginTwilloPage extends BasePage {
 	WebElement opt;
 
 	@FindBy(xpath="//*[text()='Verify']")
-	WebElement verify;
+	WebElement verifyButton;
 
 	@Step("Logging into Twilio account")    
 	public  void login(String loginname,String pwd, Properties properties ) throws Exception {
@@ -58,8 +55,8 @@ public class LoginTwilloPage extends BasePage {
 		 * System.out.println(OTPNumber); opt.sendKeys(OTPNumber.trim());
 		 */
 		Thread.sleep(20000);
-		verify.click();
-
+		//verify.click();
+		SharedMethods.clickElement(driver, verifyButton);
 	}
 
 	public static String getMessage(Properties properties) {

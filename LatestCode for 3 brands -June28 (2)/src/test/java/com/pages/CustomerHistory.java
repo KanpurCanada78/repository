@@ -42,11 +42,11 @@ public class CustomerHistory extends BasePage {
 
 	private void SelectChannel() throws Exception {
 		// SharedMethods.clickElement(dropDownChannelElement);
-		SharedMethods.selectElementFromDropdown(driver, dropDownChannelList, dropDownChannelElement, "Email");
+		SharedMethods.selectElementFromDropdown(driver, dropDownChannelList, "Email");
 	}
 
 	private void SelectRange() throws Exception {
-		SharedMethods.selectElementFromDropdown(driver, dropDownRangeList, dropDownRangeElement, "");
+		SharedMethods.selectElementFromDropdown(driver, dropDownRangeList, "");
 	}
 
 	private void ClickFilter() throws Exception {

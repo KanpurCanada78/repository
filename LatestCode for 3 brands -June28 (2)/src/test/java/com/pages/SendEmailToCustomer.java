@@ -1,22 +1,17 @@
 package com.pages;
 
-import java.io.IOException;
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import com.helper.SharedMethods;
 import com.helper.WaitUtility;
-import com.twilioTests.BaseTest;
 import com.ui.pages.BasePage;
 
 public class SendEmailToCustomer extends BasePage{
 	
-	protected SendEmailToCustomer(WebDriver driver) {
+	public SendEmailToCustomer(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	@FindBy(xpath = "//h5[text()='Send Email To Customer']")
@@ -43,12 +38,14 @@ public class SendEmailToCustomer extends BasePage{
 	@FindBy(css = "div[class*='Twilio-UserCard-InfoContainer'] span")
 	WebElement agentCurrentStatus;
 	
-	@FindBy(xpath = "ul[class*='Twilio-Menu Twilio-UserControls-AccountMenu'] li button")
+	@FindBy(css = "ul[class*='Twilio-Menu Twilio-UserControls-AccountMenu'] li button")
 	List<WebElement> dropDownAgentStatusList;
+	
+	@FindBy(css = "div[class*='Twilio-Icon Twilio-Icon-AgentBold']")
+	WebElement linkAgentDesktop;
 
 	private void selectBrand() throws Exception {
-		//SharedMethods.clickElement(dropDownBrandParentElement);
-		SharedMethods.selectElementFromDropdown(driver, dropDownBrandParentList, dropDownBrandParentElement, "Bergdorf Goodman");
+		SharedMethods.selectElementFromDropdown(driver, dropDownBrandParentList, "Bergdorf Goodman");
 	}
 	
 	private void enterSubject() throws Exception {
@@ -68,11 +65,18 @@ public class SendEmailToCustomer extends BasePage{
 		return agentCurrentStatus.getText().contains("Available");
 	}
 	
-	private void makeAgentAvailable() throws Exception {
+	public void makeAgentAvailable() throws Exception {
 		if(!checkAgentAvailable()) {
-			agentCurrentStatus.click();
-			SharedMethods.selectElementFromDropdown(driver, dropDownAgentStatusList, dropDownBrandParentElement, "Available");
+			SharedMethods.clickElement(driver, agentCurrentStatus);
+			SharedMethods.selectElementFromDropdown(driver, dropDownAgentStatusList, "Available");
 		}	
 	}
+	
+	public void selectAgentDesktop(String url) throws Exception {
+		//SharedMethods.clickElement(driver, linkAgentDesktop);
+		driver.get(url);
+	}
+	
+	
 	
 }

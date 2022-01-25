@@ -25,12 +25,13 @@ import com.helper.EmailCommonSteps;
 import com.helper.EmailUtils;
 import com.listen.CustomListen;
 import com.pages.LoginTwilloPage;
+import com.pages.SendEmailToCustomer;
 import com.ui.pages.HomeTwilloPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 
-@Listeners({ CustomListen.class })
+//@Listeners({ CustomListen.class })
 public class TwilioGmailTest extends BaseTest{
 	
 	public static LoginTwilloPage  lp;
@@ -40,6 +41,7 @@ public class TwilioGmailTest extends BaseTest{
 	public static EmailCommonSteps emailCommonSteps;
 	public static String emailAddress;
 	public static String emailPassword;
+	public static SendEmailToCustomer _sendEmailToCustomerPage;
 
 
 	
@@ -60,8 +62,14 @@ public class TwilioGmailTest extends BaseTest{
 		//driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);		 
 		lp=new com.pages.LoginTwilloPage(driver);
 		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
-		hp=new HomeTwilloPage(driver);
-		driver=hp.taskchekwithoutbound(driver, properties,properties.getProperty("NMEmailUser"), properties.getProperty("NMEmailUserFirstNameLastName"), true);
+		//hp=new HomeTwilloPage(driver);
+		_sendEmailToCustomerPage = new SendEmailToCustomer(driver);
+		_sendEmailToCustomerPage.makeAgentAvailable();
+		_sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty("TwilioAgentDesktop"));
+		
+		//driver=hp.taskchekwithoutbound(driver, properties,properties.getProperty("NMEmailUser"), properties.getProperty("NMEmailUserFirstNameLastName"), true);
+		Thread.sleep(20000000);
+		
 		
 	}
 
