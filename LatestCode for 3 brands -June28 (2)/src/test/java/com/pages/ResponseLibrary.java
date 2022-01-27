@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 
 import com.constant.Constants;
 import com.helper.SharedMethods;
-import com.ui.pages.BasePage;
 
 public class ResponseLibrary extends BasePage {
 	protected ResponseLibrary(WebDriver driver) {

@@ -1,4 +1,4 @@
-package com.ui.pages;
+package com.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

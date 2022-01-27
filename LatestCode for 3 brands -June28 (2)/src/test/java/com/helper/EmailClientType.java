@@ -2,7 +2,8 @@ package com.helper;
 
 public enum EmailClientType {
     GMAIL("Gmail"),
-    OUTLOOK("Outlook");
+    OUTLOOK("Outlook"),
+	YAHOO("Yahoo");
 
     EmailClientType(String value) {
         this.value = value;

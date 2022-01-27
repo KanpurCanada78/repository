@@ -16,7 +16,6 @@ public class SharedMethods {
 	
 	public static void selectElementFromDropdown(WebDriver driver, List<WebElement> options, String value) throws Exception {
 		WaitUtility.WaitTillElementListVisible(driver, options);
-		//parentElement.click();
 		selectElementFromList(driver, options, value);
     }
 

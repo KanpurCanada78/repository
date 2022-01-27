@@ -4,9 +4,10 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import com.constant.Constants;
 import com.helper.SharedMethods;
 import com.helper.WaitUtility;
-import com.ui.pages.BasePage;
 
 public class SendEmailToCustomer extends BasePage{
 	
@@ -44,19 +45,19 @@ public class SendEmailToCustomer extends BasePage{
 	@FindBy(css = "div[class*='Twilio-Icon Twilio-Icon-AgentBold']")
 	WebElement linkAgentDesktop;
 
-	private void selectBrand() throws Exception {
-		SharedMethods.selectElementFromDropdown(driver, dropDownBrandParentList, "Bergdorf Goodman");
+	public void selectBrand() throws Exception {
+		SharedMethods.selectElementFromDropdown(driver, dropDownBrandParentList, Constants.brandName);
 	}
 	
-	private void enterSubject() throws Exception {
+	public void enterSubject() throws Exception {
 		SharedMethods.clearAndEnterText(driver, subjectTextBox, "Test Subject Automation");
 	}
 	
-	private void enterEmail() throws Exception {
+	public void enterEmail() throws Exception {
 		SharedMethods.clearAndEnterText(driver, customerEmailTextBox, "Shailendra_Singh@neimanmarcus.com");
 	}
 	
-	private void sendEmail() throws Exception {
+	public void sendEmail() throws Exception {
 		SharedMethods.clickElement(driver, composeEmailButton);
 	}
 	
@@ -76,6 +77,7 @@ public class SendEmailToCustomer extends BasePage{
 		//SharedMethods.clickElement(driver, linkAgentDesktop);
 		driver.get(url);
 	}
+	
 	
 	
 	

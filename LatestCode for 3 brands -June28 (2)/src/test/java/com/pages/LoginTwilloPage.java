@@ -10,7 +10,6 @@ import com.helper.SharedMethods;
 import com.twilio.Twilio;
 import com.twilio.base.ResourceSet;
 import com.twilio.rest.api.v2010.account.Message;
-import com.ui.pages.BasePage;
 
 import io.qameta.allure.Step;
 

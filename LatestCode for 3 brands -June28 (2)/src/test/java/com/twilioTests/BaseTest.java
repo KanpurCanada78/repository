@@ -41,8 +41,7 @@ public class BaseTest {
     	case "Chrome":
     	WebDriverManager.chromedriver().driverVersion(properties.getProperty("ChromeDriverSetupVersion")).setup();
 		driver = new ChromeDriver();	
-    	break;
-    	
+    	break;    	
     	case "Firefox":
         	WebDriverManager.firefoxdriver().driverVersion(properties.getProperty("FirefoxDriverSetupVersion")).setup();
     		driver = new FirefoxDriver();    	
