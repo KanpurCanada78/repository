@@ -73,7 +73,7 @@ public class Yahoo extends BasePage {
 		driver.get(properties.getProperty("EmailUrl"));
 		driver.manage().window().maximize();
 		ySignIn(properties.getProperty("YahooUserEmail"), properties.getProperty("YahooUserEmailPassword"));
-	    deletemail(driver);
+	    //deletemail(driver);
 	    composeEmail("CustomerCare_NMQA@neimanmarcus.com", "TestNMemailtest");
 	}
 
