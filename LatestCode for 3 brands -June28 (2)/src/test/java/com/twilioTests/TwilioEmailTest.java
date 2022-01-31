@@ -50,8 +50,8 @@ public class TwilioEmailTest extends BaseTest{
 	public void Inbound_NM_CustomerEmailToTwilio() throws Exception
 	{
 		
-		  Yahoo yah = new Yahoo(driver);
-		  yah.signInToYahooMailAndSendEmail();
+		  //Yahoo yah = new Yahoo(driver);
+		  //yah.signInToYahooMailAndSendEmail();
 //		  emailAddress = properties.getProperty("NMEmailUser"); 
 //		  emailPassword = properties.getProperty("NMEmailPassword");
 //		  emailAddress = properties.getProperty("YahooUserEmail"); 

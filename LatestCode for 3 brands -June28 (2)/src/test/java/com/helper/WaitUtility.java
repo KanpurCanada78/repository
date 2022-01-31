@@ -14,13 +14,15 @@ public class WaitUtility {
 
 	public static void WaitTillElementVisible(WebDriver driver, WebElement element) throws IOException, Exception {
 		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); 
+		Thread.sleep(2000);
 		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(element));
 		Thread.sleep(2000);
 	}
 	
 	public static void WaitTillElementListVisible(WebDriver driver, List<WebElement> element) throws IOException, Exception {
-			new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfAllElements(element));
-			Thread.sleep(2000);
+		Thread.sleep(2000);
+		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfAllElements(element));
+		Thread.sleep(2000);
 	}
 
 }

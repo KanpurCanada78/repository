@@ -54,14 +54,14 @@ public class LoginTwilloPage extends BasePage {
 		 * System.out.println(OTPNumber); opt.sendKeys(OTPNumber.trim());
 		 */
 		
-		Twilio.init(properties.getProperty("TwilioAuthACCOUNT_SID"), properties.getProperty("TwilioAuthAUTH_TOKEN"));
- 		String smsBody = getMessage(properties);
- 		System.out.println(smsBody);
- 		String OTPNumber = smsBody.replaceAll("[^-?0-9]+", " ");
- 		System.out.println(OTPNumber);
- 		Thread.sleep(2500);
- 		opt.sendKeys(OTPNumber.trim());
- 	
+//		Twilio.init(properties.getProperty("TwilioAuthACCOUNT_SID"), properties.getProperty("TwilioAuthAUTH_TOKEN"));
+// 		String smsBody = getMessage(properties);
+// 		System.out.println(smsBody);
+// 		String OTPNumber = smsBody.replaceAll("[^-?0-9]+", " ");
+// 		System.out.println(OTPNumber);
+// 		Thread.sleep(2500);
+// 		opt.sendKeys(OTPNumber.trim());
+// 	
 		Thread.sleep(20000);
 		//verify.click();
 		SharedMethods.clickElement(driver, verifyButton);
