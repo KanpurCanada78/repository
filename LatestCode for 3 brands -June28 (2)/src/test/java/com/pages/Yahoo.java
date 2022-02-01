@@ -48,10 +48,15 @@ public class Yahoo extends BasePage {
 
 	@FindBy(xpath = "//*[@id='ybarMailLink']/span[1]")
 	WebElement messagebox;
-
-	@FindBy(xpath = "//*[@id=\"app\"]/div[2]/div/div[1]/nav/div/div[1]/a")
+	
+	@FindBy(css="a#ymail")
+	WebElement mailLink;
+	
+	@FindBy(xpath = "//a[text()='Compose'][@role='button']")
 	WebElement compose;
-
+	//*[@id=\\\"app\\\"]/div[2]/div/div[1]/nav/div/div[1]/a
+	
+	
 	@FindBy(xpath = "//*[@id='message-to-field']")
 	WebElement toemail;
 
@@ -74,16 +79,18 @@ public class Yahoo extends BasePage {
 		driver.manage().window().maximize();
 		ySignIn(properties.getProperty("YahooUserEmail"), properties.getProperty("YahooUserEmailPassword"));
 	    //deletemail(driver);
+		
 	    composeEmail("CustomerCare_NMQA@neimanmarcus.com", "TestNMemailtest");
 	}
 
 	public void ySignIn(String username, String pwd) throws Exception {
-		SharedMethods.clickElement(driver, ysginin);
+		//SharedMethods.clickElement(driver, ysginin);
 		SharedMethods.clearAndEnterText(driver, yusername, username);
 		SharedMethods.clickElement(driver, btnsignin);
 		SharedMethods.clearAndEnterText(driver, ypassword, pwd);
 		SharedMethods.clickElement(driver, pnext);
-		SharedMethods.clickElement(driver, messagebox);
+		//SharedMethods.clickElement(driver, messagebox);
+		SharedMethods.clickElement(driver, mailLink);
 	}
 	
 	@Step("Composing email from customer")

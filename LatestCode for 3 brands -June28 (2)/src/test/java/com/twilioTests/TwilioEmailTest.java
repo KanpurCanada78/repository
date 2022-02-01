@@ -25,7 +25,9 @@ import com.helper.EmailClientType;
 import com.helper.EmailCommonSteps;
 import com.helper.EmailUtils;
 import com.listen.CustomListen;
+import com.pages.CustomerHistory;
 import com.pages.LoginTwilloPage;
+import com.pages.ResponseLibrary;
 import com.pages.SendEmailToCustomer;
 import com.pages.Yahoo;
 import com.ui.pages.HomeTwilloPage;
@@ -44,6 +46,8 @@ public class TwilioEmailTest extends BaseTest{
 	public static String emailAddress;
 	public static String emailPassword;
 	public static SendEmailToCustomer _sendEmailToCustomerPage;
+	public static ResponseLibrary _responseLibrary;
+	
 	
 	@Test(priority = 1)
 	@Description("Verify whether   customer is able to send an email to twilio flex account")
@@ -67,12 +71,35 @@ public class TwilioEmailTest extends BaseTest{
 		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
 		//hp=new HomeTwilloPage(driver);
 		_sendEmailToCustomerPage = new SendEmailToCustomer(driver);
-		_sendEmailToCustomerPage.makeAgentAvailable();
-		_sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty("TwilioAgentDesktop"));
-		_sendEmailToCustomerPage.selectBrand();
-		_sendEmailToCustomerPage.enterSubject();
-		_sendEmailToCustomerPage.enterEmail();
-		_sendEmailToCustomerPage.sendEmail();
+		//Thread.sleep(7000);
+		
+		  _sendEmailToCustomerPage.makeAgentAvailable();
+		  _sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty(
+		  "TwilioAgentDesktop"));
+		  _sendEmailToCustomerPage.acceptCustReuest();
+		  _sendEmailToCustomerPage.clickBackToTools();
+		  _responseLibrary = new ResponseLibrary(driver);
+		  _responseLibrary.clickResponseLibrary();
+		  _responseLibrary.SelectResponseType("Borderfree");
+		  _responseLibrary.ClickSubTypeDetailedView("BF - Accepted Payment");
+		  _responseLibrary.AddSubTypeMsg("BF - Accepted Payment");
+		  boolean result=_responseLibrary.CheckSubTypeMsgAddedInConversationBody();
+		  if(result==true) {
+			  System.out.println("Response Added!!");
+		  }
+		  else {
+			  
+		  }
+		 _sendEmailToCustomerPage.sendResponse();
+		 _sendEmailToCustomerPage.clickCompleteResponse();
+		  
+		  
+			/*
+			 * _sendEmailToCustomerPage.selectBrand();
+			 * _sendEmailToCustomerPage.enterSubject();
+			 * _sendEmailToCustomerPage.enterEmail(); _sendEmailToCustomerPage.sendEmail();
+			 */
+		 
 		//driver=hp.taskchekwithoutbound(driver, properties,properties.getProperty("NMEmailUser"), properties.getProperty("NMEmailUserFirstNameLastName"), true);
 		//Thread.sleep(20000000);
 		

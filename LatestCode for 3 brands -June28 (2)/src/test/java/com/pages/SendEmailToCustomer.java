@@ -14,7 +14,10 @@ public class SendEmailToCustomer extends BasePage{
 	public SendEmailToCustomer(WebDriver driver) {
 		super(driver);
 	}
-
+	
+	@FindBy(xpath = "//button/span[text()='Back to tools']")
+	WebElement backToToolBtn;
+	
 	@FindBy(xpath = "//h5[text()='Send Email To Customer']")
 	WebElement sendEmailTitle;
 	
@@ -44,6 +47,15 @@ public class SendEmailToCustomer extends BasePage{
 	
 	@FindBy(css = "div[class*='Twilio-Icon Twilio-Icon-AgentBold']")
 	WebElement linkAgentDesktop;
+	
+	@FindBy(xpath="//div[@class='Twilio-TaskListBaseItem-Actions css-q7usly']")
+	WebElement acceptCustMail;
+	
+	@FindBy(xpath="//button[contains(@class,'Twilio-Button flex-md' )][text()='Send']")
+	WebElement sendResponseToCust;
+	
+	@FindBy(xpath="//button[contains(@class,'Twilio-Button flex-md')]/span[text()='COMPLETE']")
+	WebElement clickTaskComplete;
 
 	public void selectBrand() throws Exception {
 		SharedMethods.selectElementFromDropdown(driver, dropDownBrandParentList, Constants.brandName);
@@ -73,9 +85,25 @@ public class SendEmailToCustomer extends BasePage{
 		}	
 	}
 	
+	public void acceptCustReuest() throws Exception {
+		SharedMethods.clickElement(driver, acceptCustMail);
+		
+	}
+	
 	public void selectAgentDesktop(String url) throws Exception {
 		//SharedMethods.clickElement(driver, linkAgentDesktop);
 		driver.get(url);
+	}
+	public void clickBackToTools() throws Exception {
+		SharedMethods.clickElement(driver, backToToolBtn);
+	}
+	
+	public void sendResponse() throws Exception {
+		SharedMethods.clickElement(driver, sendResponseToCust);
+	}
+	
+	public void clickCompleteResponse() throws Exception {
+		SharedMethods.clickElement(driver, clickTaskComplete);
 	}
 	
 	

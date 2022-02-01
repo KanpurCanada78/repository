@@ -9,7 +9,7 @@ import com.helper.SharedMethods;
 
 public class CustomerHistory extends BasePage {
 
-	protected CustomerHistory(WebDriver driver) {
+	public CustomerHistory(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
@@ -20,8 +20,7 @@ public class CustomerHistory extends BasePage {
 	@FindBy(xpath = "//button[text()='Filter']")
 	WebElement filterBtn;
 
-	@FindBy(xpath = "//button/span[text()='Back to tools']")
-	WebElement backToToolBtn;
+	
 
 	@FindBy(xpath = "//div[text()='All']")
 	WebElement dropDownChannelElement;
@@ -58,5 +57,6 @@ public class CustomerHistory extends BasePage {
 	private void viewDetailed() throws Exception {
 		SharedMethods.clickElement(driver, eyeDetailedView);
 	}
+	
 
 }

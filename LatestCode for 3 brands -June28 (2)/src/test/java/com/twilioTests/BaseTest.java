@@ -54,7 +54,7 @@ public class BaseTest {
     
     @AfterTest
 	public void afterTest() throws Exception	{	
-		driver.quit();
+		//driver.quit();
 	}
 
   

@@ -11,7 +11,7 @@ import com.constant.Constants;
 import com.helper.SharedMethods;
 
 public class ResponseLibrary extends BasePage {
-	protected ResponseLibrary(WebDriver driver) {
+	public ResponseLibrary(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
@@ -32,13 +32,16 @@ public class ResponseLibrary extends BasePage {
 
 	@FindBy(xpath = "//div[contains(@class,'Twilio Twilio-MessageInput')]/descendant::p")
 	WebElement brandLabelInConversationBody;
+	
+	@FindBy(xpath="//p[text()='RESPONSE LIBRARY']")
+	WebElement clickResponseLib;
 
-	private void clickBrowse() throws Exception {
+	public void clickBrowse() throws Exception {
 
 		SharedMethods.clickElement(driver, browseLabel);
 	}
 
-	private void SelectResponseType(String responseType) throws Exception {
+	public void SelectResponseType(String responseType) throws Exception {
 
 		clickBrowse();
 		SharedMethods.selectElementFromList(driver, responseTypeList, responseType);
@@ -51,19 +54,19 @@ public class ResponseLibrary extends BasePage {
 
 	}
 
-	private void ClickSubTypeDetailedView(String responseSubType) throws Exception {
+	public void ClickSubTypeDetailedView(String responseSubType) throws Exception {
 
 		GetResponseSubType(responseSubType).findElements(By.xpath("/div/div")).get(2).click();
 
 	}
 
-	private void AddSubTypeMsg(String responseSubType) throws Exception {
+	public void AddSubTypeMsg(String responseSubType) throws Exception {
 
 		GetResponseSubType(responseSubType).findElements(By.xpath("/div/div")).get(0).click();
 
 	}
 
-	private boolean CheckSubTypeMsgAddedInConversationBody() {
+	public boolean CheckSubTypeMsgAddedInConversationBody() {
 
 		if (textAreaMsg.getText() != null) {
 			return true;
@@ -80,6 +83,9 @@ public class ResponseLibrary extends BasePage {
 		} else {
 			return false;
 		}
+	}
+	public void clickResponseLibrary() throws Exception {
+		SharedMethods.clickElement(driver, clickResponseLib);
 	}
 
 }
