@@ -62,7 +62,7 @@ public class LoginTwilloPage extends BasePage {
 		 * Thread.sleep(2500); opt.sendKeys(OTPNumber.trim());
 		 */
  	
-		Thread.sleep(7000);
+		Thread.sleep(30000);
 		//verify.click();
 		SharedMethods.clickElement(driver, verifyButton);
 	}

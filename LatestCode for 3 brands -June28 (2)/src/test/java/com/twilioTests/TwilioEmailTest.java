@@ -70,6 +70,7 @@ public class TwilioEmailTest extends BaseTest{
 		lp=new com.pages.LoginTwilloPage(driver);
 		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
 		//hp=new HomeTwilloPage(driver);
+		Thread.sleep(60000);
 		_sendEmailToCustomerPage = new SendEmailToCustomer(driver);
 		//Thread.sleep(7000);
 		

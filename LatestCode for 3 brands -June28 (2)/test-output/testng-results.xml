@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-01T19:04:56Z" name="Default suite" finished-at="2022-02-01T19:07:17Z" duration-ms="140699">
+  <suite started-at="2022-02-01T19:29:07Z" name="Default suite" finished-at="2022-02-01T19:32:42Z" duration-ms="215627">
     <groups>
     </groups>
-    <test started-at="2022-02-01T19:04:56Z" name="Default test" finished-at="2022-02-01T19:07:17Z" duration-ms="140699">
+    <test started-at="2022-02-01T19:29:07Z" name="Default test" finished-at="2022-02-01T19:32:42Z" duration-ms="215627">
       <class name="com.twilioTests.TwilioEmailTest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.twilioTests.TwilioEmailTest@2bef51f2]" started-at="2022-02-01T19:04:56Z" name="beforeSuite" finished-at="2022-02-01T19:04:56Z" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.twilioTests.TwilioEmailTest@2bef51f2]" started-at="2022-02-01T19:29:07Z" name="beforeSuite" finished-at="2022-02-01T19:29:07Z" duration-ms="17" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.twilioTests.TwilioEmailTest@2bef51f2]" started-at="2022-02-01T19:04:56Z" name="beforeTest" finished-at="2022-02-01T19:05:05Z" duration-ms="9366" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.twilioTests.TwilioEmailTest@2bef51f2]" started-at="2022-02-01T19:29:07Z" name="beforeTest" finished-at="2022-02-01T19:29:17Z" duration-ms="10369" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="Inbound_NM_CustomerEmailToTwilio()[pri:1, instance:com.twilioTests.TwilioEmailTest@2bef51f2]" started-at="2022-02-01T19:05:05Z" name="Inbound_NM_CustomerEmailToTwilio" finished-at="2022-02-01T19:07:17Z" duration-ms="131225" status="FAIL">
+        <test-method signature="Inbound_NM_CustomerEmailToTwilio()[pri:1, instance:com.twilioTests.TwilioEmailTest@2bef51f2]" started-at="2022-02-01T19:29:17Z" name="Inbound_NM_CustomerEmailToTwilio" finished-at="2022-02-01T19:32:42Z" duration-ms="205073" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.cssSelector: div[class*='Twilio-UserCard-InfoContainer'] span' (tried for 30 second(s) with 500 milliseconds interval)]]>
@@ -27,7 +27,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
 at com.helper.WaitUtility.WaitTillElementVisible(WaitUtility.java:17)
 at com.pages.SendEmailToCustomer.checkAgentAvailable(SendEmailToCustomer.java:77)
 at com.pages.SendEmailToCustomer.makeAgentAvailable(SendEmailToCustomer.java:82)
-at com.twilioTests.TwilioEmailTest.Inbound_NM_CustomerEmailToTwilio(TwilioEmailTest.java:76)
+at com.twilioTests.TwilioEmailTest.Inbound_NM_CustomerEmailToTwilio(TwilioEmailTest.java:77)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,9 +59,9 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: '4.0.0-beta-3', revision: '5d108f9a67'
 System info: host: 'DESKTOP-91I88RH', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [10ac5704582edd99676ed9ce5434aaba, findElement {using=css selector, value=div[class*='Twilio-UserCard-InfoContainer'] span}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\Ratnesh Rawat\AppD...}, goog:chromeOptions: {debuggerAddress: localhost:54870}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54870/devtoo..., se:cdpVersion: 97.0.4692.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 10ac5704582edd99676ed9ce5434aaba
+Command: [f69341b58ebdad725f71da331db544bc, findElement {using=css selector, value=div[class*='Twilio-UserCard-InfoContainer'] span}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\Ratnesh Rawat\AppD...}, goog:chromeOptions: {debuggerAddress: localhost:57117}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57117/devtoo..., se:cdpVersion: 97.0.4692.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f69341b58ebdad725f71da331db544bc
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -94,7 +94,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Inbound_NM_CustomerEmailToTwilio -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.twilioTests.TwilioEmailTest@2bef51f2]" started-at="2022-02-01T19:07:17Z" name="afterTest" finished-at="2022-02-01T19:07:17Z" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.twilioTests.TwilioEmailTest@2bef51f2]" started-at="2022-02-01T19:32:42Z" name="afterTest" finished-at="2022-02-01T19:32:42Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
