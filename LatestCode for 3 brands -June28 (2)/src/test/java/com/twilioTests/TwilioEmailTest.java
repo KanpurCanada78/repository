@@ -70,13 +70,12 @@ public class TwilioEmailTest extends BaseTest{
 		lp=new com.pages.LoginTwilloPage(driver);
 		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
 		//hp=new HomeTwilloPage(driver);
-		Thread.sleep(60000);
+		//Thread.sleep(60000);
 		_sendEmailToCustomerPage = new SendEmailToCustomer(driver);
 		//Thread.sleep(7000);
 		
 		  _sendEmailToCustomerPage.makeAgentAvailable();
-		  _sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty(
-		  "TwilioAgentDesktop"));
+		  _sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty("TwilioAgentDesktop"));
 		  _sendEmailToCustomerPage.acceptCustReuest();
 		  _sendEmailToCustomerPage.clickBackToTools();
 		  _responseLibrary = new ResponseLibrary(driver);

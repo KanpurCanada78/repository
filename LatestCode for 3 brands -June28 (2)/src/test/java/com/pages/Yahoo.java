@@ -89,8 +89,8 @@ public class Yahoo extends BasePage {
 		SharedMethods.clickElement(driver, btnsignin);
 		SharedMethods.clearAndEnterText(driver, ypassword, pwd);
 		SharedMethods.clickElement(driver, pnext);
-		//SharedMethods.clickElement(driver, messagebox);
-		SharedMethods.clickElement(driver, mailLink);
+		SharedMethods.clickElement(driver, messagebox);
+		//SharedMethods.clickElement(driver, mailLink);
 	}
 	
 	@Step("Composing email from customer")

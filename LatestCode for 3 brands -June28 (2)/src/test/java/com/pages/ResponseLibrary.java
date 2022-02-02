@@ -18,7 +18,7 @@ public class ResponseLibrary extends BasePage {
 
 	WebElement responseSubTypeElement;
 
-	@FindBy(xpath = "//div[contains(@class,'Twilio-CRMContainer')]/descendant::ul/li")
+	@FindBy(xpath = "//div[contains(@class,'Twilio-CRMContainer')]/descendant::ul/li//h6")
 	List<WebElement> responseTypeList;
 
 	@FindBy(xpath = "//div[contains(@class,'Twilio-CRMContainer')]/descendant::ul/li")
@@ -42,32 +42,23 @@ public class ResponseLibrary extends BasePage {
 	}
 
 	public void SelectResponseType(String responseType) throws Exception {
-
 		clickBrowse();
 		SharedMethods.selectElementFromList(driver, responseTypeList, responseType);
 	}
 
 	private WebElement GetResponseSubType(String responseSubType) throws Exception {
-
-		responseSubTypeElement = SharedMethods.GetElementFromList(responseTypeSubList, responseSubType);
-		return responseSubTypeElement;
-
+		return SharedMethods.GetElementFromList(driver, responseTypeSubList, responseSubType);
 	}
 
 	public void ClickSubTypeDetailedView(String responseSubType) throws Exception {
-
-		GetResponseSubType(responseSubType).findElements(By.xpath("/div/div")).get(2).click();
-
+		GetResponseSubType(responseSubType).click();
 	}
 
 	public void AddSubTypeMsg(String responseSubType) throws Exception {
-
-		GetResponseSubType(responseSubType).findElements(By.xpath("/div/div")).get(0).click();
-
+		GetResponseSubType(responseSubType).findElement(By.xpath("/ancestor::ul//button")).click();
 	}
 
 	public boolean CheckSubTypeMsgAddedInConversationBody() {
-
 		if (textAreaMsg.getText() != null) {
 			return true;
 		} else {
@@ -76,7 +67,6 @@ public class ResponseLibrary extends BasePage {
 	}
 
 	private boolean CheckBrandLabelInBody() {
-
 		String brand = brandLabelInConversationBody.getText();
 		if (brand == Constants.brandName) {
 			return true;
@@ -84,6 +74,7 @@ public class ResponseLibrary extends BasePage {
 			return false;
 		}
 	}
+	
 	public void clickResponseLibrary() throws Exception {
 		SharedMethods.clickElement(driver, clickResponseLib);
 	}

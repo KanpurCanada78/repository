@@ -20,8 +20,8 @@ public class SharedMethods {
     }
 
 	public static void selectElementFromList(WebDriver driver, List<WebElement> options, String value) throws Exception {
+		WaitUtility.WaitTillElementListVisible(driver, options);
 		for(WebElement val : options) {
-			String str = val.getText();
 			if(val.getText().contains(value)) {
 				clickElement(driver, val);
 			}
@@ -47,7 +47,8 @@ public class SharedMethods {
 		return null;		
 	}
 	
-	public static WebElement GetElementFromList(List<WebElement> options, String value) throws Exception {
+	public static WebElement GetElementFromList(WebDriver driver, List<WebElement> options, String value) throws Exception {
+		WaitUtility.WaitTillElementListVisible(driver, options);
 		for(WebElement val : options) {
 			if(val.getText().contains(value)) {
 				return val;
