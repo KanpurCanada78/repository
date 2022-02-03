@@ -53,7 +53,6 @@ public class TwilioEmailTest extends BaseTest{
 	@Description("Verify whether   customer is able to send an email to twilio flex account")
 	public void Inbound_NM_CustomerEmailToTwilio() throws Exception
 	{
-		
 		  Yahoo yah = new Yahoo(driver);
 		  yah.signInToYahooMailAndSendEmail();
 //		  emailAddress = properties.getProperty("NMEmailUser"); 
