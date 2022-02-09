@@ -17,7 +17,7 @@ import io.qameta.allure.Step;
 
 public class Yahoo extends BasePage {
 	Properties properties;
-	
+
 	public Yahoo(WebDriver driver)  {
 		super(driver);
 	}
@@ -30,7 +30,7 @@ public class Yahoo extends BasePage {
 
 	@FindBy(css = "button[title*=\"Delete\"]")
 	WebElement delete;
-	
+
 	@FindBy(xpath = "//*[@id='login-passwd']")
 	WebElement ypassword;
 
@@ -48,15 +48,15 @@ public class Yahoo extends BasePage {
 
 	@FindBy(xpath = "//*[@id='ybarMailLink']/span[1]")
 	WebElement messagebox;
-	
+
 	@FindBy(css="a#ymail")
 	WebElement mailLink;
-	
+
 	@FindBy(xpath = "//a[text()='Compose'][@role='button']")
 	WebElement compose;
 	//*[@id=\\\"app\\\"]/div[2]/div/div[1]/nav/div/div[1]/a
-	
-	
+
+
 	@FindBy(xpath = "//*[@id='message-to-field']")
 	WebElement toemail;
 
@@ -71,16 +71,14 @@ public class Yahoo extends BasePage {
 
 	@FindBy(xpath = "//*[text()='OK']")
 	WebElement sdeleteok;
-	
+
 	public void signInToYahooMailAndSendEmail() throws Exception {	
 		properties = new Properties();
 		properties.load(new FileInputStream("config.properties"));
 		driver.get(properties.getProperty("EmailUrl"));
 		driver.manage().window().maximize();
 		ySignIn(properties.getProperty("YahooUserEmail"), properties.getProperty("YahooUserEmailPassword"));
-	    //deletemail(driver);
-		
-	    composeEmail("CustomerCare_NMQA@neimanmarcus.com", "TestNMemailtest");
+		composeEmail("CustomerCare_NMQA@neimanmarcus.com", "TestNMemailtest");
 	}
 
 	public void ySignIn(String username, String pwd) throws Exception {
@@ -92,18 +90,18 @@ public class Yahoo extends BasePage {
 		SharedMethods.clickElement(driver, messagebox);
 		//SharedMethods.clickElement(driver, mailLink);
 	}
-	
+
 	@Step("Composing email from customer")
 	public void composeEmail(String email, String sub) throws Exception {
 		Thread.sleep(2000);
 		compose.click();
 		toemail.sendKeys(email);
-		
+
 		subject.sendKeys("TestNMemailtest"+GeneralUtility.randonText());
 		btnsent.click();
 		Thread.sleep(3000);
 	}
-	
+
 	@Step("Verify resposne received from twilio to customer")
 	public String emailVerification(WebDriver driver2) throws Exception {
 		String value = null;

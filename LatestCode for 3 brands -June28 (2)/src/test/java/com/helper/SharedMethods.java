@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 public class SharedMethods {
@@ -24,6 +25,7 @@ public class SharedMethods {
 		for(WebElement val : options) {
 			if(val.getText().contains(value)) {
 				clickElement(driver, val);
+				return;
 			}
 			else{
 				//Assert.fail("None of the element was found");
@@ -58,8 +60,6 @@ public class SharedMethods {
 			}
 		}
 		return null;		
-	}
-	
-	
+	}	
 	
 }

@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
@@ -29,8 +30,7 @@ public class BaseTest {
 	}
 	
 	@BeforeTest
-	public void beforeTest() throws Exception
-	{	
+	public void beforeTest() throws Exception{	
 		getDriver();
 		driver.manage().window().maximize();
 	}
@@ -40,7 +40,9 @@ public class BaseTest {
     	switch(properties.getProperty("driverType")) {
     	case "Chrome":
     	WebDriverManager.chromedriver().driverVersion(properties.getProperty("ChromeDriverSetupVersion")).setup();
-		driver = new ChromeDriver();	
+    	ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--disable-notifications");
+		driver = new ChromeDriver(options);	
     	break;    	
     	case "Firefox":
         	WebDriverManager.firefoxdriver().driverVersion(properties.getProperty("FirefoxDriverSetupVersion")).setup();

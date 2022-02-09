@@ -37,7 +37,6 @@ import io.qameta.allure.Step;
 
 //@Listeners({ CustomListen.class })
 public class TwilioEmailTest extends BaseTest{
-	
 	public static LoginTwilloPage  lp;
 	public static HomeTwilloPage hp;
 	public static final Logger log = Logger.getLogger(TwilioEmailTest.class);
@@ -47,62 +46,28 @@ public class TwilioEmailTest extends BaseTest{
 	public static String emailPassword;
 	public static SendEmailToCustomer _sendEmailToCustomerPage;
 	public static ResponseLibrary _responseLibrary;
-	
-	
+
 	@Test(priority = 1)
 	@Description("Verify whether   customer is able to send an email to twilio flex account")
 	public void Inbound_NM_CustomerEmailToTwilio() throws Exception
 	{
-		  Yahoo yah = new Yahoo(driver);
-		  yah.signInToYahooMailAndSendEmail();
-//		  emailAddress = properties.getProperty("NMEmailUser"); 
-//		  emailPassword = properties.getProperty("NMEmailPassword");
-//		  emailAddress = properties.getProperty("YahooUserEmail"); 
-//		  emailPassword = properties.getProperty("YahooUserEmailPassword");
-//		  Folder fld = emailUtils.connectToInbox(emailAddress, emailPassword,EmailClientType.YAHOO); emailUtils.deleteEmails();
-//		  Long currentTime = System.currentTimeMillis(); 
-//		  emailUtils.sendEmail(emailAddress, emailPassword,properties.getProperty("TwilioNMemail"), "Automation Test NM "+currentTime,
-//		  "Hello, What is the status on my automation test order WN"+currentTime);
-		 
-		//driver.findElement(By.xpath("//body")).sendKeys(Keys.F5);	
+		Yahoo yah = new Yahoo(driver);
+		yah.signInToYahooMailAndSendEmail();
 		driver.get(properties.getProperty("TwilioFlexUrl"));
 		lp=new com.pages.LoginTwilloPage(driver);
 		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
-		//hp=new HomeTwilloPage(driver);
-		//Thread.sleep(60000);
 		_sendEmailToCustomerPage = new SendEmailToCustomer(driver);
-		//Thread.sleep(7000);
-		
-		  _sendEmailToCustomerPage.makeAgentAvailable();
-		  _sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty("TwilioAgentDesktop"));
-		  _sendEmailToCustomerPage.acceptCustReuest();
-		  _sendEmailToCustomerPage.clickBackToTools();
-		  _responseLibrary = new ResponseLibrary(driver);
-		  _responseLibrary.clickResponseLibrary();
-		  _responseLibrary.SelectResponseType("Borderfree");
-		  _responseLibrary.ClickSubTypeDetailedView("BF - Accepted Payment");
-		  _responseLibrary.AddSubTypeMsg("BF - Accepted Payment");
-		  boolean result=_responseLibrary.CheckSubTypeMsgAddedInConversationBody();
-		  if(result==true) {
-			  System.out.println("Response Added!!");
-		  }
-		  else {
-			  
-		  }
-		 _sendEmailToCustomerPage.sendResponse();
-		 _sendEmailToCustomerPage.clickCompleteResponse();
-		  
-		  
-			/*
-			 * _sendEmailToCustomerPage.selectBrand();
-			 * _sendEmailToCustomerPage.enterSubject();
-			 * _sendEmailToCustomerPage.enterEmail(); _sendEmailToCustomerPage.sendEmail();
-			 */
-		 
-		//driver=hp.taskchekwithoutbound(driver, properties,properties.getProperty("NMEmailUser"), properties.getProperty("NMEmailUserFirstNameLastName"), true);
-		//Thread.sleep(20000000);
-		
-		
+		_sendEmailToCustomerPage.makeAgentAvailable();
+		_sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty("TwilioAgentDesktop"));
+		_sendEmailToCustomerPage.acceptCustReuest();
+		_sendEmailToCustomerPage.clickBackToTools();
+		_responseLibrary = new ResponseLibrary(driver);
+		_responseLibrary.clickResponseLibrary();
+		_responseLibrary.SelectResponseType("Borderfree");
+		_responseLibrary.AddSubTypeMsg("BF - Accepted Payment");
+		Assert.assertTrue(_responseLibrary.CheckSubTypeMsgAddedInConversationBody());
+		_sendEmailToCustomerPage.sendResponse();
+		_sendEmailToCustomerPage.clickCompleteResponse();
 	}
 
 	//@Test(dependsOnMethods = {"Inbound_NM_CustomerEmailToTwilio"}, priority = 2)
@@ -115,7 +80,7 @@ public class TwilioEmailTest extends BaseTest{
 		verifyEmailDetails(properties.getProperty("TwilioNMemailReply"), contentReplyFromTwilio);
 
 	}
-	
+
 	//@Test(priority= 3)
 	@Description("Verify whether customer is able to send an email to BG twilio flex account")
 	public void Inbound_BG_CustomerEmailToTwilio() throws Exception
@@ -124,17 +89,17 @@ public class TwilioEmailTest extends BaseTest{
 		emailPassword = properties.getProperty("BGEmailPassword");
 		//emailUtils.connectToInbox(emailAddress, emailPassword, EmailClientType.GMAIL);
 		emailUtils.connectToInbox(emailAddress, emailPassword, EmailClientType.YAHOO);
-    	emailUtils.deleteEmails();
-    	Long currentTime = System.currentTimeMillis();
-    	emailUtils.sendEmail(emailAddress, emailPassword, properties.getProperty("TwilioBGemail"),
-    			"Automation Test BG "+currentTime, "Hello, What is the status on my automation test order WN"+currentTime);
-    	//Wait after email sent from customer to twilio agent
-    	Thread.sleep(Integer.valueOf(properties.getProperty("wait.email.sent.from.customer.to.twilio")));
-    	driver = hp.getDriverAfterTaskComplete();
-    	driver=hp.taskchekwithoutbound(driver, properties,properties.getProperty("BGEmailUser"), properties.getProperty("BGEmailUserFirstNameLastName"), false);    	
-    	
+		emailUtils.deleteEmails();
+		Long currentTime = System.currentTimeMillis();
+		emailUtils.sendEmail(emailAddress, emailPassword, properties.getProperty("TwilioBGemail"),
+				"Automation Test BG "+currentTime, "Hello, What is the status on my automation test order WN"+currentTime);
+		//Wait after email sent from customer to twilio agent
+		Thread.sleep(Integer.valueOf(properties.getProperty("wait.email.sent.from.customer.to.twilio")));
+		driver = hp.getDriverAfterTaskComplete();
+		driver=hp.taskchekwithoutbound(driver, properties,properties.getProperty("BGEmailUser"), properties.getProperty("BGEmailUserFirstNameLastName"), false);    	
+
 	}
-	
+
 	//@Test(dependsOnMethods = {"Inbound_BG_CustomerEmailToTwilio"}, priority = 4)
 	@Description("Verify whether twilio flex agent is able to reply email from customer ")
 	public void Outbound_BG_twilioReplyToCustomerEmail() throws Exception
@@ -145,7 +110,7 @@ public class TwilioEmailTest extends BaseTest{
 		verifyEmailDetails(properties.getProperty("TwilioBGemailReply"), contentReplyFromTwilio);
 
 	}
-	
+
 	//@Test(priority = 5)
 	@Description("Verify whether customer is able to send an email to HC twilio flex account")
 	public void Inbound_HC_CustomerEmailToTwilio() throws Exception
@@ -153,18 +118,18 @@ public class TwilioEmailTest extends BaseTest{
 		emailAddress = properties.getProperty("HCEmailUser");
 		emailPassword = properties.getProperty("HCEmailPassword");
 		emailUtils.connectToInbox(emailAddress, emailPassword, EmailClientType.GMAIL);
-    	emailUtils.deleteEmails();
-    	Long currentTime = System.currentTimeMillis();
-    	emailUtils.sendEmail(emailAddress, emailPassword, properties.getProperty("TwilioHCemail"),
-    			"Automation Test HC "+currentTime, "Hello, What is the status on my automation test order WN"+currentTime);
-    	//Wait after email sent from customer to twilio agent
-    	Thread.sleep(Integer.valueOf(properties.getProperty("wait.email.sent.from.customer.to.twilio")));
-    	driver = hp.getDriverAfterTaskComplete();
-    	driver=hp.taskchekwithoutbound(driver, properties,properties.getProperty("HCEmailUser"), properties.getProperty("HCEmailUserFirstNameLastName"), false);
-    	
-    	
+		emailUtils.deleteEmails();
+		Long currentTime = System.currentTimeMillis();
+		emailUtils.sendEmail(emailAddress, emailPassword, properties.getProperty("TwilioHCemail"),
+				"Automation Test HC "+currentTime, "Hello, What is the status on my automation test order WN"+currentTime);
+		//Wait after email sent from customer to twilio agent
+		Thread.sleep(Integer.valueOf(properties.getProperty("wait.email.sent.from.customer.to.twilio")));
+		driver = hp.getDriverAfterTaskComplete();
+		driver=hp.taskchekwithoutbound(driver, properties,properties.getProperty("HCEmailUser"), properties.getProperty("HCEmailUserFirstNameLastName"), false);
+
+
 	}
-	
+
 	//@Test(dependsOnMethods = {"Inbound_HC_CustomerEmailToTwilio"}, priority = 6)
 	@Description("Verify whether twilio flex agent is able to reply email from customer ")
 	public void Outbound_HC_twilioReplyToCustomerEmail() throws Exception
@@ -173,14 +138,14 @@ public class TwilioEmailTest extends BaseTest{
 		//Wait for email reply from twilio to customer
 		Thread.sleep(Integer.valueOf(properties.getProperty("wait.email.reply.from.twilio.to.customer")));
 		verifyEmailDetails(properties.getProperty("TwilioHCemailReply"), contentReplyFromTwilio);
-        emailUtils.disconnectInbox();
+		emailUtils.disconnectInbox();
 
 	}
 
 	/*
 	 * @AfterTest public void afterTest() { driver.quit(); }
 	 */
-	
+
 	//@Step("Verify Email from twilio agent")
 	private void verifyEmailDetails(String EmailAddress, String EmailBody) throws MessagingException, IOException {
 		Message message = emailUtils.getRecentEmailMessage();

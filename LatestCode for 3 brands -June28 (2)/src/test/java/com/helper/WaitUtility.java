@@ -12,8 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WaitUtility {
 	static WebDriver dri;
 
-	public static void WaitTillElementVisible(WebDriver driver, WebElement element) throws IOException, Exception {
-		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); 
+	public static void WaitTillElementVisible(WebDriver driver, WebElement element) throws IOException, Exception { 
 		Thread.sleep(2000);
 		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.elementToBeClickable(element));
 		Thread.sleep(2000);

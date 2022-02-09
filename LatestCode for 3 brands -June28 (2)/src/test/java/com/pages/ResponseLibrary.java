@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 import com.constant.Constants;
 import com.helper.SharedMethods;
+import com.helper.WaitUtility;
 
 public class ResponseLibrary extends BasePage {
 	public ResponseLibrary(WebDriver driver) {
@@ -37,7 +38,6 @@ public class ResponseLibrary extends BasePage {
 	WebElement clickResponseLib;
 
 	public void clickBrowse() throws Exception {
-
 		SharedMethods.clickElement(driver, browseLabel);
 	}
 
@@ -55,7 +55,9 @@ public class ResponseLibrary extends BasePage {
 	}
 
 	public void AddSubTypeMsg(String responseSubType) throws Exception {
-		GetResponseSubType(responseSubType).findElement(By.xpath("/ancestor::ul//button")).click();
+		List<WebElement> subList =driver.findElements(By.xpath("//div[contains(@class,'Twilio-CRMContainer')]/descendant::ul/li/ancestor::ul//button"));
+		WaitUtility.WaitTillElementListVisible(driver, subList);
+		subList.get(0).click();
 	}
 
 	public boolean CheckSubTypeMsgAddedInConversationBody() {
@@ -67,8 +69,7 @@ public class ResponseLibrary extends BasePage {
 	}
 
 	private boolean CheckBrandLabelInBody() {
-		String brand = brandLabelInConversationBody.getText();
-		if (brand == Constants.brandName) {
+		if (brandLabelInConversationBody.getText() == Constants.brandName) {
 			return true;
 		} else {
 			return false;

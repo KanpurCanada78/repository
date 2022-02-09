@@ -1,93 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="160617" started-at="2022-02-02T18:47:22Z" finished-at="2022-02-02T18:50:02Z">
+  <suite name="Default suite" duration-ms="124641" started-at="2022-02-08T18:38:42Z" finished-at="2022-02-08T18:40:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="160617" started-at="2022-02-02T18:47:22Z" finished-at="2022-02-02T18:50:02Z">
+    <test name="Default test" duration-ms="124641" started-at="2022-02-08T18:38:42Z" finished-at="2022-02-08T18:40:47Z">
       <class name="com.twilioTests.TwilioEmailTest">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.twilioTests.TwilioEmailTest@66f57048]" name="beforeSuite" is-config="true" duration-ms="15" started-at="2022-02-02T18:47:22Z" finished-at="2022-02-02T18:47:22Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.twilioTests.TwilioEmailTest@66f57048]" name="beforeSuite" is-config="true" duration-ms="13" started-at="2022-02-08T18:38:42Z" finished-at="2022-02-08T18:38:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.twilioTests.TwilioEmailTest@66f57048]" name="beforeTest" is-config="true" duration-ms="9535" started-at="2022-02-02T18:47:22Z" finished-at="2022-02-02T18:47:31Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.twilioTests.TwilioEmailTest@66f57048]" name="beforeTest" is-config="true" duration-ms="9547" started-at="2022-02-08T18:38:42Z" finished-at="2022-02-08T18:38:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="Inbound_NM_CustomerEmailToTwilio()[pri:1, instance:com.twilioTests.TwilioEmailTest@66f57048]" name="Inbound_NM_CustomerEmailToTwilio" duration-ms="150984" started-at="2022-02-02T18:47:31Z" finished-at="2022-02-02T18:50:02Z">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: element is not attached to the page document
-  (Session info: chrome=97.0.4692.99)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.0.0-beta-3', revision: '5d108f9a67'
-System info: host: 'LAPTOP-Q9TFL0ME', ip: '192.168.2.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_311'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [17cbfb0dfc52d87e7dc46f15edaba768, getElementText {id=66d2e569-33e5-4b28-9efb-8697e8834f93}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\91880\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57529}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57529/devtoo..., se:cdpVersion: 97.0.4692.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (17cbfb0dfc52d87e7dc46f15edaba768)] -> xpath: //div[contains(@class,'Twilio-CRMContainer')]/descendant::ul/li//h6]
-Session ID: 17cbfb0dfc52d87e7dc46f15edaba768]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=97.0.4692.99)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.0.0-beta-3', revision: '5d108f9a67'
-System info: host: 'LAPTOP-Q9TFL0ME', ip: '192.168.2.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_311'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [17cbfb0dfc52d87e7dc46f15edaba768, getElementText {id=66d2e569-33e5-4b28-9efb-8697e8834f93}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.99, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\91880\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57529}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57529/devtoo..., se:cdpVersion: 97.0.4692.99, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (17cbfb0dfc52d87e7dc46f15edaba768)] -> xpath: //div[contains(@class,'Twilio-CRMContainer')]/descendant::ul/li//h6]
-Session ID: 17cbfb0dfc52d87e7dc46f15edaba768
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:198)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:153)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:128)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:619)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:237)
-at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:199)
-at com.helper.SharedMethods.selectElementFromList(SharedMethods.java:25)
-at com.pages.ResponseLibrary.SelectResponseType(ResponseLibrary.java:46)
-at com.twilioTests.TwilioEmailTest.Inbound_NM_CustomerEmailToTwilio(TwilioEmailTest.java:83)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+        <test-method status="PASS" signature="Inbound_NM_CustomerEmailToTwilio()[pri:1, instance:com.twilioTests.TwilioEmailTest@66f57048]" name="Inbound_NM_CustomerEmailToTwilio" duration-ms="114949" started-at="2022-02-08T18:38:52Z" finished-at="2022-02-08T18:40:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Inbound_NM_CustomerEmailToTwilio -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.twilioTests.TwilioEmailTest@66f57048]" name="afterTest" is-config="true" duration-ms="1" started-at="2022-02-02T18:50:02Z" finished-at="2022-02-02T18:50:02Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.twilioTests.TwilioEmailTest@66f57048]" name="afterTest" is-config="true" duration-ms="2" started-at="2022-02-08T18:40:47Z" finished-at="2022-02-08T18:40:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
