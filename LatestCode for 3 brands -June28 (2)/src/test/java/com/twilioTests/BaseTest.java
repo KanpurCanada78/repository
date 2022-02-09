@@ -42,6 +42,7 @@ public class BaseTest {
     	WebDriverManager.chromedriver().driverVersion(properties.getProperty("ChromeDriverSetupVersion")).setup();
     	ChromeOptions options = new ChromeOptions();
     	options.addArguments("--disable-notifications");
+    	//options.addArguments("");
 		driver = new ChromeDriver(options);	
     	break;    	
     	case "Firefox":
