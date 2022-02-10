@@ -61,17 +61,17 @@ public class TwilioEmailTest extends BaseTest{
 		_sendEmailToCustomerPage = new SendEmailToCustomer(driver);
 		_sendEmailToCustomerPage.makeAgentAvailable();
 		_sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty("TwilioAgentDesktop"));
-		//_sendEmailToCustomerPage.acceptCustReuest();
+		_sendEmailToCustomerPage.acceptCustEmailRequest();
 		_sendEmailToCustomerPage.clickBackToTools();
 		_responseLibrary = new ResponseLibrary(driver);
 		_responseLibrary.clickResponseLibrary();
-		_responseLibrary.SelectResponseType("Borderfree");
-		_responseLibrary.AddSubTypeMsg("BF - Accepted Payment");
+		_responseLibrary.selectResponseType("Borderfree");
+		_responseLibrary.addSubTypeMsg("BF - Accepted Payment");
 		Assert.assertTrue(_responseLibrary.CheckSubTypeMsgAddedInConversationBody());
 		_sendEmailToCustomerPage.clickBackToTools();
 		_stellaConnect =new StellaConnect(driver);
 		_stellaConnect.ClickStellaConnect();
-		_stellaConnect.SelectReason("RETURNS","RMA");
+		_stellaConnect.selectDispositionReason("RETURNS","RMA");
 		_sendEmailToCustomerPage.sendResponse();
 		_sendEmailToCustomerPage.clickCompleteResponse();
 	}

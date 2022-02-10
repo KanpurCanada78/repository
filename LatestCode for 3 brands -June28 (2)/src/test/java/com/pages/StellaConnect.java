@@ -28,35 +28,13 @@ public class StellaConnect extends BasePage {
 	@FindBy(xpath="//p[text()='STELLA CONNECT']")
 	WebElement clickStellaConnect;
 	
-	
-	
-	
-	private boolean CheckName() {
-		if (name.getText() != null) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	private boolean CheckEmail() {
-		if (email.getText() != null) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	public void ClickStellaConnect() throws Exception
-	{
+	public void ClickStellaConnect() throws Exception{
 		SharedMethods.clickElement(driver,clickStellaConnect);
 	}
 	
-	public void SelectReason(String reasonType, String reasonSubType) throws Exception
-	{
+	public void selectDispositionReason(String reasonType, String reasonSubType) throws Exception{
 		WebElement reasonTp=driver.findElement(By.xpath("//button/span[text()='Back to tools']/parent::button/following-sibling::div/div[2]/div/div/div/div/p"+"[text()='"+reasonType+"']"));
-		WebElement subReasonTp=reasonTp.findElement(By.xpath("/ancestor::div[2]/following-sibling::div/descendant::ul/li/button/div/span/div[text()='"+reasonSubType+"']"));
-		
+		WebElement subReasonTp=reasonTp.findElement(By.xpath("/ancestor::div[2]/following-sibling::div/descendant::ul/li/button/div/span/div[text()='"+reasonSubType+"']"));	
 		SharedMethods.clickElement(driver, reasonTp);
 		SharedMethods.clickElement(driver, subReasonTp);
 		

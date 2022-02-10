@@ -1,6 +1,8 @@
 package com.pages;
 
 import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -48,9 +50,8 @@ public class SendEmailToCustomer extends BasePage{
 	@FindBy(css = "div[class*='Twilio-Icon Twilio-Icon-AgentBold']")
 	WebElement linkAgentDesktop;
 
-	@FindBy(xpath="//div[@class='Twilio-TaskListBaseItem-Actions css-q7usly']")
-	//div[@class='Twilio-TaskListBaseItem-Actions css-q7usly']
-	List<WebElement> acceptCustMail;
+	@FindBy(xpath="//div[contains(text(),'Incoming email request')]/parent::div/following-sibling::div")
+	WebElement acceptCustEmail;
 
 	@FindBy(xpath="//button[contains(@class,'Twilio-Button flex-md' )][text()='Send']")
 	WebElement sendResponseToCust;
@@ -86,13 +87,8 @@ public class SendEmailToCustomer extends BasePage{
 		}	
 	}
 
-	public void acceptCustReuest(String requestType) throws Exception {
-		if(requestType=="Email") {
-			acceptCustMail.stream().filter(element->element.getText().contains("email"));
-			//WebElement contentMail=
-			//SharedMethods.clickElement(driver, acceptCustMail);
-		}
-		
+	public void acceptCustEmailRequest() throws Exception {
+		SharedMethods.clickElement(driver, acceptCustEmail);
 	}
 
 	public void selectAgentDesktop(String url) throws Exception {

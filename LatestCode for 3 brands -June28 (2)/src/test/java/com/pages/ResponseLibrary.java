@@ -41,7 +41,7 @@ public class ResponseLibrary extends BasePage {
 		SharedMethods.clickElement(driver, browseLabel);
 	}
 
-	public void SelectResponseType(String responseType) throws Exception {
+	public void selectResponseType(String responseType) throws Exception {
 		clickBrowse();
 		SharedMethods.selectElementFromList(driver, responseTypeList, responseType);
 	}
@@ -54,7 +54,7 @@ public class ResponseLibrary extends BasePage {
 		GetResponseSubType(responseSubType).click();
 	}
 
-	public void AddSubTypeMsg(String responseSubType) throws Exception {
+	public void addSubTypeMsg(String responseSubType) throws Exception {
 		List<WebElement> subList =driver.findElements(By.xpath("//div[contains(@class,'Twilio-CRMContainer')]/descendant::ul/li/ancestor::ul//button"));
 		WaitUtility.WaitTillElementListVisible(driver, subList);
 		subList.get(0).click();
