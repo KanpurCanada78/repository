@@ -22,7 +22,6 @@ public class LoginTwilloPage extends BasePage {
 	@FindBy(xpath="//input[@id='email']")
 	WebElement username;
 
-
 	@FindBy(xpath="//input[@id='password']")
 	WebElement password;
 
@@ -41,7 +40,7 @@ public class LoginTwilloPage extends BasePage {
 		SharedMethods.clickElement(driver, button);
 		SharedMethods.clearAndEnterText(driver, password, pwd);
 		SharedMethods.clickElement(driver, button);
-		Thread.sleep(20000);
+		Thread.sleep(30000);
 		SharedMethods.clickElement(driver, verifyButton);
 	}
 	

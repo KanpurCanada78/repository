@@ -29,6 +29,7 @@ import com.pages.CustomerHistory;
 import com.pages.LoginTwilloPage;
 import com.pages.ResponseLibrary;
 import com.pages.SendEmailToCustomer;
+import com.pages.StellaConnect;
 import com.pages.Yahoo;
 import com.ui.pages.HomeTwilloPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -46,6 +47,7 @@ public class TwilioEmailTest extends BaseTest{
 	public static String emailPassword;
 	public static SendEmailToCustomer _sendEmailToCustomerPage;
 	public static ResponseLibrary _responseLibrary;
+	public static StellaConnect _stellaConnect;
 
 	@Test(priority = 1)
 	@Description("Verify whether   customer is able to send an email to twilio flex account")
@@ -59,13 +61,17 @@ public class TwilioEmailTest extends BaseTest{
 		_sendEmailToCustomerPage = new SendEmailToCustomer(driver);
 		_sendEmailToCustomerPage.makeAgentAvailable();
 		_sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty("TwilioAgentDesktop"));
-		_sendEmailToCustomerPage.acceptCustReuest();
+		//_sendEmailToCustomerPage.acceptCustReuest();
 		_sendEmailToCustomerPage.clickBackToTools();
 		_responseLibrary = new ResponseLibrary(driver);
 		_responseLibrary.clickResponseLibrary();
 		_responseLibrary.SelectResponseType("Borderfree");
 		_responseLibrary.AddSubTypeMsg("BF - Accepted Payment");
 		Assert.assertTrue(_responseLibrary.CheckSubTypeMsgAddedInConversationBody());
+		_sendEmailToCustomerPage.clickBackToTools();
+		_stellaConnect =new StellaConnect(driver);
+		_stellaConnect.ClickStellaConnect();
+		_stellaConnect.SelectReason("RETURNS","RMA");
 		_sendEmailToCustomerPage.sendResponse();
 		_sendEmailToCustomerPage.clickCompleteResponse();
 	}

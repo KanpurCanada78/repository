@@ -49,7 +49,8 @@ public class SendEmailToCustomer extends BasePage{
 	WebElement linkAgentDesktop;
 
 	@FindBy(xpath="//div[@class='Twilio-TaskListBaseItem-Actions css-q7usly']")
-	WebElement acceptCustMail;
+	//div[@class='Twilio-TaskListBaseItem-Actions css-q7usly']
+	List<WebElement> acceptCustMail;
 
 	@FindBy(xpath="//button[contains(@class,'Twilio-Button flex-md' )][text()='Send']")
 	WebElement sendResponseToCust;
@@ -85,8 +86,13 @@ public class SendEmailToCustomer extends BasePage{
 		}	
 	}
 
-	public void acceptCustReuest() throws Exception {
-		SharedMethods.clickElement(driver, acceptCustMail);
+	public void acceptCustReuest(String requestType) throws Exception {
+		if(requestType=="Email") {
+			acceptCustMail.stream().filter(element->element.getText().contains("email"));
+			//WebElement contentMail=
+			//SharedMethods.clickElement(driver, acceptCustMail);
+		}
+		
 	}
 
 	public void selectAgentDesktop(String url) throws Exception {
