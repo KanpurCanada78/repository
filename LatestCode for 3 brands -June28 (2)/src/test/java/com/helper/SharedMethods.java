@@ -16,12 +16,13 @@ public class SharedMethods {
     }
 	
 	public static void selectElementFromDropdown(WebDriver driver, List<WebElement> options, String value) throws Exception {
+		
 		WaitUtility.WaitTillElementListVisible(driver, options);
 		selectElementFromList(driver, options, value);
     }
 
 	public static void selectElementFromList(WebDriver driver, List<WebElement> options, String value) throws Exception {
-		WaitUtility.WaitTillElementListVisible(driver, options);
+		//WaitUtility.WaitTillElementListVisible(driver, options);
 		for(WebElement val : options) {
 			if(val.getText().contains(value)) {
 				clickElement(driver, val);

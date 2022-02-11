@@ -33,9 +33,11 @@ public class StellaConnect extends BasePage {
 	}
 	
 	public void selectDispositionReason(String reasonType, String reasonSubType) throws Exception{
-		WebElement reasonTp=driver.findElement(By.xpath("//button/span[text()='Back to tools']/parent::button/following-sibling::div/div[2]/div/div/div/div/p"+"[text()='"+reasonType+"']"));
-		WebElement subReasonTp=reasonTp.findElement(By.xpath("/ancestor::div[2]/following-sibling::div/descendant::ul/li/button/div/span/div[text()='"+reasonSubType+"']"));	
+		
+		WebElement reasonTp=driver.findElement(By.xpath("//button/following-sibling::div/div[2]/div/div/div/div/p[text()='"+reasonType+"']"));
 		SharedMethods.clickElement(driver, reasonTp);
+		//button/span[text()='Back to tools']/parent::button/following-sibling::div/div[2]/div/div/div/div/p[text()='"+reasonType+"']
+		WebElement subReasonTp=reasonTp.findElement(By.xpath("/ancestor::div[2]/following-sibling::div/descendant::ul/li/button/div/span/div[text()='"+reasonSubType+"']"));	
 		SharedMethods.clickElement(driver, subReasonTp);
 		
 	}

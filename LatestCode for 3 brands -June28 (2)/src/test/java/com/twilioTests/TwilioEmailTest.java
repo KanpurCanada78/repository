@@ -54,7 +54,7 @@ public class TwilioEmailTest extends BaseTest{
 	public void Inbound_NM_CustomerEmailToTwilio() throws Exception
 	{
 		Yahoo yah = new Yahoo(driver);
-		//yah.signInToYahooMailAndSendEmail();
+		yah.signInToYahooMailAndSendEmail();
 		driver.get(properties.getProperty("TwilioFlexUrl"));
 		lp=new com.pages.LoginTwilloPage(driver);
 		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
@@ -62,6 +62,7 @@ public class TwilioEmailTest extends BaseTest{
 		_sendEmailToCustomerPage.makeAgentAvailable();
 		_sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty("TwilioAgentDesktop"));
 		_sendEmailToCustomerPage.acceptCustEmailRequest();
+		_sendEmailToCustomerPage.makeAgentAvailable();
 		_sendEmailToCustomerPage.clickBackToTools();
 		_responseLibrary = new ResponseLibrary(driver);
 		_responseLibrary.clickResponseLibrary();
