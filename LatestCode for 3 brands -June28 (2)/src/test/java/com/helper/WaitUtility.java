@@ -23,5 +23,11 @@ public class WaitUtility {
 		new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOfAllElements(element));
 		Thread.sleep(2000);
 	}
+	
+	public static void WaitTillElementVisibleCustomWait(WebDriver driver, WebElement element, int time) throws IOException, Exception { 
+		Thread.sleep(2000);
+		new WebDriverWait(driver, Duration.ofSeconds(time)).until(ExpectedConditions.elementToBeClickable(element));
+		Thread.sleep(2000);
+	}
 
 }

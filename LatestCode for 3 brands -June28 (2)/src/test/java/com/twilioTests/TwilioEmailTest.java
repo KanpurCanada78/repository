@@ -54,7 +54,7 @@ public class TwilioEmailTest extends BaseTest{
 	public void Inbound_NM_CustomerEmailToTwilio() throws Exception
 	{
 		Yahoo yah = new Yahoo(driver);
-		yah.signInToYahooMailAndSendEmail();
+		//yah.signInToYahooMailAndSendEmail();
 		driver.get(properties.getProperty("TwilioFlexUrl"));
 		lp=new com.pages.LoginTwilloPage(driver);
 		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
@@ -72,8 +72,10 @@ public class TwilioEmailTest extends BaseTest{
 		_sendEmailToCustomerPage.clickBackToTools();
 		_stellaConnect =new StellaConnect(driver);
 		_stellaConnect.ClickStellaConnect();
-		_stellaConnect.selectDispositionReason("RETURNS","RMA");
+		_stellaConnect.selectDispositionReason("WEBSITE / TECHNICAL","The order is shipped to an unintended address.");
 		_sendEmailToCustomerPage.sendResponse();
+		_sendEmailToCustomerPage.clickCompleteResponse();
+		Thread.sleep(6000);
 		_sendEmailToCustomerPage.clickCompleteResponse();
 	}
 

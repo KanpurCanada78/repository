@@ -6,7 +6,10 @@ import java.util.stream.StreamSupport;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import com.constant.Constants;
 import com.helper.SharedMethods;
+import com.helper.WaitUtility;
 import com.twilio.Twilio;
 import com.twilio.base.ResourceSet;
 import com.twilio.rest.api.v2010.account.Message;
@@ -33,6 +36,9 @@ public class LoginTwilloPage extends BasePage {
 
 	@FindBy(xpath="//*[text()='Verify']")
 	WebElement verifyButton;
+	
+	@FindBy(xpath ="//span[text()='Log In Here']")
+	WebElement loginHereButton;
 
 	@Step("Logging into Twilio account")    
 	public  void login(String loginname,String pwd, Properties properties ) throws Exception {
@@ -40,8 +46,15 @@ public class LoginTwilloPage extends BasePage {
 		SharedMethods.clickElement(driver, button);
 		SharedMethods.clearAndEnterText(driver, password, pwd);
 		SharedMethods.clickElement(driver, button);
-		Thread.sleep(30000);
+		Thread.sleep(20000);
 		SharedMethods.clickElement(driver, verifyButton);
+		try {
+			WaitUtility.WaitTillElementVisibleCustomWait(driver, loginHereButton, 10);
+			loginHereButton.click();
+		}
+		catch (Exception e) {
+			log.info(Constants._userAlreadyLoggedInMessage);
+		}
 	}
 	
 	public static String getMessage(Properties properties) {

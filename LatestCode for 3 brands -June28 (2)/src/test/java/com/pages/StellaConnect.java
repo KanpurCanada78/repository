@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.helper.SharedMethods;
+import com.helper.WaitUtility;
 
 public class StellaConnect extends BasePage {
 	public StellaConnect(WebDriver driver) {
@@ -22,8 +23,8 @@ public class StellaConnect extends BasePage {
 	@FindBy(xpath = "//input[@name='email']")
 	WebElement email;
 	
-	@FindBy(xpath="//div[contains(@class,'Twilio-CRMContainer')]/descendant::div[@role='button']")
-	List<WebElement> list;
+	@FindBy(xpath="//div[contains(@class, 'Twilio-CRMContainer-default')]//p")
+	List<WebElement> dispositionReasonList;
 	
 	@FindBy(xpath="//p[text()='STELLA CONNECT']")
 	WebElement clickStellaConnect;
@@ -32,14 +33,10 @@ public class StellaConnect extends BasePage {
 		SharedMethods.clickElement(driver,clickStellaConnect);
 	}
 	
-	public void selectDispositionReason(String reasonType, String reasonSubType) throws Exception{
-		
-		WebElement reasonTp=driver.findElement(By.xpath("//button/following-sibling::div/div[2]/div/div/div/div/p[text()='"+reasonType+"']"));
-		SharedMethods.clickElement(driver, reasonTp);
-		//button/span[text()='Back to tools']/parent::button/following-sibling::div/div[2]/div/div/div/div/p[text()='"+reasonType+"']
-		WebElement subReasonTp=reasonTp.findElement(By.xpath("/ancestor::div[2]/following-sibling::div/descendant::ul/li/button/div/span/div[text()='"+reasonSubType+"']"));	
-		SharedMethods.clickElement(driver, subReasonTp);
-		
+	public void selectDispositionReason(String reasonType, String reasonSubType) throws Exception{		
+		SharedMethods.selectElementFromList(driver, dispositionReasonList, reasonType);
+		SharedMethods.selectElementFromList(driver, dispositionReasonList, reasonSubType);		
+		Thread.sleep(5000);
 	}
 	
 }

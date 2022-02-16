@@ -87,8 +87,8 @@ public class Yahoo extends BasePage {
 		SharedMethods.clickElement(driver, btnsignin);
 		SharedMethods.clearAndEnterText(driver, ypassword, pwd);
 		SharedMethods.clickElement(driver, pnext);
-		//SharedMethods.clickElement(driver, messagebox);
-		SharedMethods.clickElement(driver, mailLink);
+		SharedMethods.clickElement(driver, messagebox);
+		//SharedMethods.clickElement(driver, mailLink);
 	}
 
 	@Step("Composing email from customer")
@@ -96,7 +96,6 @@ public class Yahoo extends BasePage {
 		Thread.sleep(2000);
 		compose.click();
 		toemail.sendKeys(email);
-
 		subject.sendKeys("TestNMemailtest"+GeneralUtility.randonText());
 		btnsent.click();
 		Thread.sleep(3000);
