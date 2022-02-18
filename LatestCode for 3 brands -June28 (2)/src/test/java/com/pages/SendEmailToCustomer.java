@@ -53,7 +53,7 @@ public class SendEmailToCustomer extends BasePage{
 	@FindBy(xpath="//div[contains(text(),'Incoming email request')]/parent::div/following-sibling::div")
 	WebElement acceptCustEmail;
 	
-	@FindBy(xpath="//span[contains(text(),'Incoming chat request')]/ancestor::div[contains(@class, 'Twilio-TaskListBaseItem-Content')]/following-sibling::div")
+	@FindBy(xpath="//span[text()='Shailendra Chat Request Automation']/ancestor::div[contains(@class,'Twilio-TaskListBaseItem-UpperArea')]/descendant::button")
 	WebElement acceptCustChat;
 
 	@FindBy(xpath="//button[contains(@class,'Twilio-Button flex-md' )][text()='Send']")
@@ -68,8 +68,8 @@ public class SendEmailToCustomer extends BasePage{
 	@FindBy(xpath="//span[text()='END CHAT']")
 	WebElement elementEndChat;
 	
-	@FindBy(xpath="//button[contains(@class, 'Twilio-IconButton flex-md')]")
-	List<WebElement> chatResponseSendButton;
+	@FindBy(xpath="//button[contains(@class, 'Twilio-IconButton flex-md')]/div[contains(@class,'flex')]")
+	WebElement chatResponseSendButton;
 
 	public void selectBrand() throws Exception {
 		SharedMethods.selectElementFromDropdown(driver, dropDownBrandParentList, Constants._brandName);
@@ -124,14 +124,12 @@ public class SendEmailToCustomer extends BasePage{
 	
 	public void sendChatResponse() throws Exception {
 		SharedMethods.clearAndEnterText(driver, chatResponseTextArea.get(2), Constants._agentMessage);
-		WaitUtility.WaitTillElementListVisible(driver, chatResponseSendButton);
-		SharedMethods.clearAndEnterText(driver, chatResponseSendButton.get(2), Constants._agentMessage);
+		SharedMethods.clickElement(driver, chatResponseSendButton);
 	}
 	
 	public void endChat() throws Exception {
 		SharedMethods.clickElement(driver, elementEndChat);
-	}
-	
+	}	
 	
 
 }
