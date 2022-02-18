@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,6 +29,11 @@ public class WaitUtility {
 		Thread.sleep(2000);
 		new WebDriverWait(driver, Duration.ofSeconds(time)).until(ExpectedConditions.elementToBeClickable(element));
 		Thread.sleep(2000);
+	}
+	
+	public static void waitUntilPresenseOfElementByLocator(WebDriver driver, By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60)) ;
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));		
 	}
 
 }

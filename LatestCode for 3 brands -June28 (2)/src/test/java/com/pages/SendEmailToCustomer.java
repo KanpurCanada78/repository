@@ -52,15 +52,27 @@ public class SendEmailToCustomer extends BasePage{
 
 	@FindBy(xpath="//div[contains(text(),'Incoming email request')]/parent::div/following-sibling::div")
 	WebElement acceptCustEmail;
+	
+	@FindBy(xpath="//span[contains(text(),'Incoming chat request')]/ancestor::div[contains(@class, 'Twilio-TaskListBaseItem-Content')]/following-sibling::div")
+	WebElement acceptCustChat;
 
 	@FindBy(xpath="//button[contains(@class,'Twilio-Button flex-md' )][text()='Send']")
 	WebElement sendResponseToCust;
 
 	@FindBy(xpath="//button[contains(@class,'Twilio-Button flex-md')]/span[text()='COMPLETE']")
 	WebElement clickTaskComplete;
+	
+	@FindBy(xpath="//textarea[contains(@class, 'flex')]")
+	List<WebElement> chatResponseTextArea;
+	
+	@FindBy(xpath="//span[text()='END CHAT']")
+	WebElement elementEndChat;
+	
+	@FindBy(xpath="//button[contains(@class, 'Twilio-IconButton flex-md')]")
+	List<WebElement> chatResponseSendButton;
 
 	public void selectBrand() throws Exception {
-		SharedMethods.selectElementFromDropdown(driver, dropDownBrandParentList, Constants.brandName);
+		SharedMethods.selectElementFromDropdown(driver, dropDownBrandParentList, Constants._brandName);
 	}
 
 	public void enterSubject() throws Exception {
@@ -77,11 +89,11 @@ public class SendEmailToCustomer extends BasePage{
 
 	private boolean checkAgentAvailable() throws Exception {
 		WaitUtility.WaitTillElementVisible(driver, agentCurrentStatus);
-		return agentCurrentStatus.getText().contains("Available");
+		return agentCurrentStatus.getText().contains("Unavailable");
 	}
 
 	public void makeAgentAvailable() throws Exception {
-		if(!checkAgentAvailable()) {
+		if(checkAgentAvailable()) {
 			SharedMethods.clickElement(driver, agentCurrentStatus);
 			SharedMethods.selectElementFromDropdown(driver, dropDownAgentStatusList, "Available");
 		}	
@@ -89,6 +101,9 @@ public class SendEmailToCustomer extends BasePage{
 
 	public void acceptCustEmailRequest() throws Exception {
 		SharedMethods.clickElement(driver, acceptCustEmail);
+	}
+	public void acceptCustChatRequest() throws Exception {
+		SharedMethods.clickElement(driver, acceptCustChat);
 	}
 
 	public void selectAgentDesktop(String url) throws Exception {
@@ -106,5 +121,17 @@ public class SendEmailToCustomer extends BasePage{
 	public void clickCompleteResponse() throws Exception {
 		SharedMethods.clickElement(driver, clickTaskComplete);
 	}
+	
+	public void sendChatResponse() throws Exception {
+		SharedMethods.clearAndEnterText(driver, chatResponseTextArea.get(2), Constants._agentMessage);
+		WaitUtility.WaitTillElementListVisible(driver, chatResponseSendButton);
+		SharedMethods.clearAndEnterText(driver, chatResponseSendButton.get(2), Constants._agentMessage);
+	}
+	
+	public void endChat() throws Exception {
+		SharedMethods.clickElement(driver, elementEndChat);
+	}
+	
+	
 
 }

@@ -1,10 +1,9 @@
 package com.helper;
 
 import java.util.List;
-
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 public class SharedMethods {
@@ -12,6 +11,7 @@ public class SharedMethods {
 	
 	public static void clickElement(WebDriver driver, WebElement element) throws Exception {
 		WaitUtility.WaitTillElementVisible(driver, element);
+		highLightElement(driver, element);
 		element.click();
     }
 	
@@ -63,4 +63,13 @@ public class SharedMethods {
 		return null;		
 	}	
 	
+	public static void clearAndEnterTextWithoutWait(WebElement element, String value) throws Exception {
+		element.clear();
+		element.sendKeys(value);	
+    }
+	
+	public static void highLightElement(WebDriver driver, WebElement element){
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
+		}	
 }

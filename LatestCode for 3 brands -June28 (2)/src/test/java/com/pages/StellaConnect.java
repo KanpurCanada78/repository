@@ -29,6 +29,9 @@ public class StellaConnect extends BasePage {
 	@FindBy(xpath="//p[text()='STELLA CONNECT']")
 	WebElement clickStellaConnect;
 	
+	@FindBy(xpath="//div[contains(@class,'Twilio-MessageBubble-Body')]/span")
+	WebElement customerMessageElement;
+	
 	public void ClickStellaConnect() throws Exception{
 		SharedMethods.clickElement(driver,clickStellaConnect);
 	}
@@ -36,7 +39,11 @@ public class StellaConnect extends BasePage {
 	public void selectDispositionReason(String reasonType, String reasonSubType) throws Exception{		
 		SharedMethods.selectElementFromList(driver, dispositionReasonList, reasonType);
 		SharedMethods.selectElementFromList(driver, dispositionReasonList, reasonSubType);		
-		Thread.sleep(5000);
+	}
+
+	public boolean isCustomerMessagePresent(String customerMessage) throws Exception{
+		System.out.println("Does method contains cust text: "+customerMessageElement.getText().contains(customerMessage));
+		return customerMessageElement.getText().contains(customerMessage);
 	}
 	
 }

@@ -69,7 +69,7 @@ public class ResponseLibrary extends BasePage {
 	}
 
 	private boolean CheckBrandLabelInBody() {
-		if (brandLabelInConversationBody.getText() == Constants.brandName) {
+		if (brandLabelInConversationBody.getText() == Constants._brandName) {
 			return true;
 		} else {
 			return false;

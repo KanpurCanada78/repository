@@ -51,8 +51,7 @@ public class BaseTest {
         	WebDriverManager.firefoxdriver().driverVersion(properties.getProperty("FirefoxDriverSetupVersion")).setup();
     		driver = new FirefoxDriver();    	
         	break;    	
-    	}
-    	driver.get(properties.getProperty("TwilioFlexUrl"));
+    	}    	
     	driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
         return driver;
     }
