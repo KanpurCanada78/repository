@@ -79,6 +79,7 @@ public class Yahoo extends BasePage {
 		driver.manage().window().maximize();
 		ySignIn(properties.getProperty("YahooUserEmail"), properties.getProperty("YahooUserEmailPassword"));
 		composeEmail("CustomerCare_NMQA@neimanmarcus.com", "TestNMemailtest");
+		Thread.sleep(10);
 	}
 
 	public void ySignIn(String username, String pwd) throws Exception {

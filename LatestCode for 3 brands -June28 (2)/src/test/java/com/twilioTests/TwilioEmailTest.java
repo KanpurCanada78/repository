@@ -38,7 +38,7 @@ import io.qameta.allure.Step;
 
 //@Listeners({ CustomListen.class })
 public class TwilioEmailTest extends BaseTest{
-	public static LoginTwilloPage  lp;
+	public static LoginTwilloPage  _loginPage;
 	public static HomeTwilloPage hp;
 	public static final Logger log = Logger.getLogger(TwilioEmailTest.class);
 	public static EmailUtils emailUtils = new EmailUtils();
@@ -54,13 +54,14 @@ public class TwilioEmailTest extends BaseTest{
 	public void Inbound_NM_CustomerEmailToTwilio() throws Exception
 	{
 		Yahoo yah = new Yahoo(driver);
-		yah.signInToYahooMailAndSendEmail();
+		//yah.signInToYahooMailAndSendEmail();
 		driver.get(properties.getProperty("TwilioFlexUrl"));
-		lp=new com.pages.LoginTwilloPage(driver);
-		lp.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
+		_loginPage=new com.pages.LoginTwilloPage(driver);
+		_loginPage.login(properties.getProperty("TwilioFlexUsername"), properties.getProperty("TwilioFlexPassword"), properties);
 		_sendEmailToCustomerPage = new SendEmailToCustomer(driver);
 		_sendEmailToCustomerPage.makeAgentAvailable();
 		_sendEmailToCustomerPage.selectAgentDesktop(properties.getProperty("TwilioAgentDesktop"));
+		_sendEmailToCustomerPage.makeAgentAvailable();
 		_sendEmailToCustomerPage.acceptCustEmailRequest();
 		_sendEmailToCustomerPage.clickBackToTools();
 		_responseLibrary = new ResponseLibrary(driver);
@@ -76,6 +77,8 @@ public class TwilioEmailTest extends BaseTest{
 		_sendEmailToCustomerPage.clickCompleteResponse();
 		Thread.sleep(6000);
 		_sendEmailToCustomerPage.clickCompleteResponse();
+		
+		_loginPage.logOut();
 	}
 
 	//@Test(dependsOnMethods = {"Inbound_NM_CustomerEmailToTwilio"}, priority = 2)

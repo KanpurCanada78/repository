@@ -3,6 +3,7 @@ package com.twilioTests;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -38,21 +40,28 @@ public class BaseTest {
 	}
 
     @SuppressWarnings("deprecation")
-	public WebDriver getDriver() {    	
+	public WebDriver getDriver() {   
+    	DesiredCapabilities caps = new DesiredCapabilities();
+        
     	switch(properties.getProperty("driverType")) {
     	case "Chrome":
-    	WebDriverManager.chromedriver().driverVersion(properties.getProperty("ChromeDriverSetupVersion")).setup();
+    	WebDriverManager.chromedriver().driverVersion(properties.getProperty("ChromeDriverSetupVersion")).setup();  	
+
     	ChromeOptions options = new ChromeOptions();
-    	options.addArguments("--disable-notifications");
-    	//options.addArguments("");
-		driver = new ChromeDriver(options);	
+        options.addArguments("use-fake-device-for-media-stream");
+        options.addArguments("use-fake-ui-for-media-stream");        
+        caps.setCapability("browser", "Chrome");
+    	caps.setCapability(ChromeOptions.CAPABILITY, options);
+    	
+    	driver = new ChromeDriver(options);
+    	
     	break;    	
     	case "Firefox":
         	WebDriverManager.firefoxdriver().driverVersion(properties.getProperty("FirefoxDriverSetupVersion")).setup();
     		driver = new FirefoxDriver();    	
         	break;    	
     	}    	
-    	driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+    	driver.manage().timeouts().implicitlyWait(60,TimeUnit.SECONDS);
         return driver;
     }
     

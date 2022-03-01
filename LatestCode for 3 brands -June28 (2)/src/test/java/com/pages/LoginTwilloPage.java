@@ -1,5 +1,6 @@
 package com.pages;
 
+import java.util.List;
 import java.util.Properties;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -37,8 +38,11 @@ public class LoginTwilloPage extends BasePage {
 	@FindBy(xpath="//*[text()='Verify']")
 	WebElement verifyButton;
 	
-	@FindBy(xpath ="//span[text()='Log In Here']")
-	WebElement loginHereButton;
+	@FindBy(css = "div[class*='Twilio-UserCard-InfoContainer'] span")
+	WebElement agentCurrentStatus;
+
+	@FindBy(css = "ul[class*='Twilio-Menu Twilio-UserControls-AccountMenu'] li button")
+	List<WebElement> dropDownAgentStatusList;
 
 	@Step("Logging into Twilio account")    
 	public  void login(String loginname,String pwd, Properties properties ) throws Exception {
@@ -48,15 +52,14 @@ public class LoginTwilloPage extends BasePage {
 		SharedMethods.clickElement(driver, button);
 		Thread.sleep(20000);
 		SharedMethods.clickElement(driver, verifyButton);
-		try {
-			WaitUtility.WaitTillElementVisibleCustomWait(driver, loginHereButton, 10);
-			loginHereButton.click();
-		}
-		catch (Exception e) {
-			log.info(Constants._userAlreadyLoggedInMessage);
-		}
 	}
-	
+
+	public void logOut() throws Exception {
+		SharedMethods.clickElement(driver, agentCurrentStatus);	
+		SharedMethods.selectElementFromDropdown(driver, dropDownAgentStatusList, "Log out");
+		WaitUtility.WaitTillElementListInVisible(driver, dropDownAgentStatusList);
+	}
+
 	public static String getMessage(Properties properties) {
 		return getMessages(properties).filter(m -> m.getDirection().compareTo(Message.Direction.INBOUND) == 0)
 				.filter(m -> m.getTo().equals(properties.getProperty("TwilioFlexOTPNumber"))).map(Message::getBody).findFirst()
@@ -67,6 +70,6 @@ public class LoginTwilloPage extends BasePage {
 		ResourceSet<Message> messages = Message.reader().read();
 		return StreamSupport.stream(messages.spliterator(), false);
 	}
-	
+
 
 }
